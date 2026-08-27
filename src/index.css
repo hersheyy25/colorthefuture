@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-ink-700 bg-brand-50 antialiased;
+  }
+  ::selection {
+    @apply bg-coral-200 text-ink-900;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+  }
+  .btn-primary {
+    @apply btn bg-brand-500 text-white shadow-lg shadow-brand-500/20 hover:bg-brand-600 hover:shadow-brand-600/25 hover:-translate-y-0.5 focus-visible:ring-brand-400;
+  }
+  .btn-ghost {
+    @apply btn bg-white/80 text-ink-600 ring-1 ring-brand-200 hover:bg-white hover:ring-brand-300 hover:-translate-y-0.5 focus-visible:ring-brand-300;
+  }
+  .btn-dark {
+    @apply btn bg-ink-700 text-white hover:bg-ink-800 hover:-translate-y-0.5 focus-visible:ring-ink-600;
+  }
+  .card {
+    @apply rounded-[1.75rem] bg-white ring-1 ring-brand-100 shadow-sm;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full bg-coral-100 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wide text-coral-600;
+  }
+  .section-title {
+    @apply font-display text-3xl font-semibold tracking-tight text-ink-800 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.12];
+  }
+  .input {
+    @apply w-full rounded-2xl border-0 bg-brand-50 px-4 py-3 text-sm text-ink-800 ring-1 ring-brand-200 transition placeholder:text-ink-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-400;
+  }
+}
+
+/* Reveal-on-scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Decorative dotted divider */
+.dot-divider {
+  background-image: radial-gradient(circle, currentColor 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+}
+
+/* Wavy underline accent */
+.wavy-underline {
+  text-decoration: underline wavy;
+  text-decoration-color: #b3cbb3;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+}
+
+/* Flip card */
+.flip-card {
+  perspective: 1200px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
