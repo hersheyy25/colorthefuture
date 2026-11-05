@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Brush, Pencil, Gift, Building2, ArrowRight } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import FlyingPosters from './FlyingPosters';
 
 type Program = {
   icon: LucideIcon;
@@ -55,12 +54,77 @@ const programs: Program[] = [
   },
 ];
 
-export default function Programs() {
-  const [active, setActive] = useState(0);
+function ProgramCard({
+  program,
+  isActive,
+  onSelect,
+}: {
+  program: Program;
+  isActive: boolean;
+  onSelect: () => void;
+}) {
+  const Icon = program.icon;
 
   return (
-    <section id="programs" className="py-20 sm:py-28">
-      <div className="container-px">
+    <button
+      type="button"
+      onMouseEnter={onSelect}
+      onFocus={onSelect}
+      onClick={onSelect}
+      className={`clay clay-hover group flex w-full items-start gap-5 rounded-[1.75rem] p-5 text-left ring-0 sm:p-6 ${
+        isActive ? 'clay-inset' : ''
+      }`}
+    >
+      <span className="clay-icon flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3">
+        <Icon
+          className={`h-6 w-6 transition-colors duration-300 ${isActive ? 'text-coral-500' : 'text-brand-600'}`}
+          strokeWidth={2}
+        />
+      </span>
+
+      <div className="min-w-0 flex-1">
+        <div className="flex flex-wrap items-center gap-3">
+          <h3 className="font-display text-lg font-semibold text-ink-800">
+            {program.title}
+          </h3>
+          <span className="clay-pill rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-coral-600">
+            {program.tag}
+          </span>
+        </div>
+
+        <p
+          className={`grid transition-all duration-500 ease-out ${
+            isActive
+              ? 'grid-rows-[1fr] opacity-100'
+              : 'grid-rows-[0fr] opacity-0'
+          }`}
+        >
+          <span className="overflow-hidden">
+            <span className="mt-3 block text-sm leading-relaxed text-ink-600">
+              {program.description}
+            </span>
+            <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 transition-colors group-hover:text-brand-700">
+              Get involved
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </span>
+          </span>
+        </p>
+      </div>
+    </button>
+  );
+}
+
+export default function Programs() {
+  const [active, setActive] = useState(0);
+  const current = programs[active];
+
+  return (
+    <section id="programs" className="relative overflow-hidden py-20 sm:py-28">
+      {/* soft clay background blobs */}
+      <div className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-brand-100/60 blur-3xl" />
+      <div className="pointer-events-none absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-coral-100/40 blur-3xl" />
+
+      <div className="container-px relative">
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div className="max-w-xl">
             <span className="eyebrow reveal">What we offer</span>
@@ -75,94 +139,44 @@ export default function Programs() {
         </div>
 
         <div className="mt-14 grid gap-8 lg:grid-cols-2 lg:gap-12">
-          {/* Left: flying posters */}
-          <div
-            className="reveal relative h-[480px] overflow-hidden rounded-3xl ring-1 ring-brand-100 shadow-sm sm:h-[560px]"
-            aria-hidden="true"
-          >
-            <FlyingPosters
-              items={programs.map((p) => p.image)}
-              planeWidth={260}
-              planeHeight={340}
-              distortion={3}
-              scrollEase={0.05}
-              cameraFov={45}
-              cameraZ={20}
-              activeIndex={active}
-            />
+          {/* Left: claymorphism image preview that changes on hover */}
+          <div className="reveal clay rounded-[2rem] p-4 sm:p-6">
+            <div className="clay-inset relative aspect-[4/5] w-full overflow-hidden rounded-[1.5rem]">
+              {programs.map((p, i) => (
+                <img
+                  key={p.title}
+                  src={p.image}
+                  alt={p.alt}
+                  loading="lazy"
+                  className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ease-out ${
+                    active === i
+                      ? 'scale-100 opacity-100 blur-0'
+                      : 'scale-105 opacity-0 blur-sm'
+                  }`}
+                />
+              ))}
+              <div className="absolute inset-0 bg-gradient-to-t from-ink-900/55 via-ink-900/10 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7">
+                <div className="clay-pill inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-bold uppercase tracking-wide text-coral-600">
+                  {current.tag}
+                </div>
+                <h3 className="mt-3 font-display text-2xl font-semibold text-white drop-shadow-sm">
+                  {current.title}
+                </h3>
+              </div>
+            </div>
           </div>
 
-          {/* Right: interactive label + description list */}
-          <div className="reveal flex flex-col justify-center">
-            <ul className="flex flex-col gap-3">
-              {programs.map((p, i) => {
-                const Icon = p.icon;
-                const isActive = active === i;
-                return (
-                  <li key={p.title}>
-                    <button
-                      type="button"
-                      onMouseEnter={() => setActive(i)}
-                      onFocus={() => setActive(i)}
-                      onClick={() => setActive(i)}
-                      className={`group flex w-full items-start gap-4 rounded-2xl p-5 text-left transition-all duration-300 ${
-                        isActive
-                          ? 'bg-white ring-1 ring-brand-200 shadow-md'
-                          : 'bg-brand-50/60 ring-1 ring-transparent hover:bg-white hover:ring-brand-100'
-                      }`}
-                    >
-                      <span
-                        className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-colors duration-300 ${
-                          isActive
-                            ? 'bg-brand-500 text-white'
-                            : 'bg-brand-100 text-brand-600'
-                        }`}
-                      >
-                        <Icon className="h-5 w-5" strokeWidth={2} />
-                      </span>
-
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-center gap-3">
-                          <h3 className="font-display text-lg font-semibold text-ink-800">
-                            {p.title}
-                          </h3>
-                          <span
-                            className={`rounded-full px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide transition-colors duration-300 ${
-                              isActive
-                                ? 'bg-coral-200 text-coral-700'
-                                : 'bg-coral-100 text-coral-500'
-                            }`}
-                          >
-                            {p.tag}
-                          </span>
-                        </div>
-
-                        <p
-                          className={`grid transition-all duration-300 ${
-                            isActive
-                              ? 'grid-rows-[1fr] opacity-100'
-                              : 'grid-rows-[0fr] opacity-0'
-                          }`}
-                        >
-                          <span className="overflow-hidden">
-                            <span className="mt-2 block text-sm leading-relaxed text-ink-600">
-                              {p.description}
-                            </span>
-                            <a
-                              href="#workshops"
-                              className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 transition-colors hover:text-brand-700"
-                            >
-                              Get involved
-                              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                            </a>
-                          </span>
-                        </p>
-                      </div>
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
+          {/* Right: clay program cards */}
+          <div className="reveal flex flex-col justify-center gap-4">
+            {programs.map((p, i) => (
+              <ProgramCard
+                key={p.title}
+                program={p}
+                isActive={active === i}
+                onSelect={() => setActive(i)}
+              />
+            ))}
           </div>
         </div>
       </div>

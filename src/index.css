@@ -72,6 +72,56 @@
   text-decoration-thickness: 2px;
 }
 
+/* Claymorphism */
+.clay {
+  background: linear-gradient(145deg, #ffffff, #eaf1ea);
+  box-shadow:
+    10px 10px 22px rgba(66, 96, 66, 0.14),
+    -8px -8px 18px rgba(255, 255, 255, 0.92),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.7),
+    inset -3px -3px 7px rgba(66, 96, 66, 0.06);
+}
+.clay-soft {
+  background: linear-gradient(145deg, #f7faf7, #e6efe6);
+  box-shadow:
+    7px 7px 16px rgba(66, 96, 66, 0.10),
+    -6px -6px 14px rgba(255, 255, 255, 0.90),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.65),
+    inset -2px -2px 5px rgba(66, 96, 66, 0.05);
+}
+.clay-inset {
+  background: linear-gradient(145deg, #e6efe6, #f7faf7);
+  box-shadow:
+    inset 5px 5px 12px rgba(66, 96, 66, 0.14),
+    inset -5px -5px 12px rgba(255, 255, 255, 0.85);
+}
+.clay-pill {
+  background: linear-gradient(145deg, #fff7f4, #f8e0d8);
+  box-shadow:
+    4px 4px 10px rgba(176, 85, 64, 0.18),
+    -3px -3px 8px rgba(255, 255, 255, 0.9),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.6);
+}
+.clay-icon {
+  background: linear-gradient(145deg, #ffffff, #d9e8d9);
+  box-shadow:
+    6px 6px 14px rgba(66, 96, 66, 0.16),
+    -5px -5px 12px rgba(255, 255, 255, 0.9),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.7),
+    inset -3px -3px 6px rgba(66, 96, 66, 0.08);
+}
+.clay-hover {
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.45s ease;
+}
+.clay-hover:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow:
+    16px 18px 34px rgba(66, 96, 66, 0.20),
+    -10px -10px 24px rgba(255, 255, 255, 0.95),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.7),
+    inset -3px -3px 7px rgba(66, 96, 66, 0.06);
+}
+
 /* Flip card */
 .flip-card {
   perspective: 1200px;
