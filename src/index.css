@@ -122,6 +122,56 @@
     inset -3px -3px 7px rgba(66, 96, 66, 0.06);
 }
 
+/* Clay icon color variants — puffy, molded-clay look per palette color */
+.clay-icon-brand {
+  background: linear-gradient(145deg, #ffffff, #cfe0cf);
+  box-shadow:
+    6px 6px 14px rgba(66, 96, 66, 0.20),
+    -5px -5px 12px rgba(255, 255, 255, 0.9),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.7),
+    inset -3px -3px 6px rgba(66, 96, 66, 0.10);
+}
+.clay-icon-coral {
+  background: linear-gradient(145deg, #fff5f2, #f3d6cb);
+  box-shadow:
+    6px 6px 14px rgba(176, 85, 64, 0.20),
+    -5px -5px 12px rgba(255, 255, 255, 0.9),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.7),
+    inset -3px -3px 6px rgba(176, 85, 64, 0.10);
+}
+.clay-icon-sky {
+  background: linear-gradient(145deg, #ffffff, #c4e0e8);
+  box-shadow:
+    6px 6px 14px rgba(48, 111, 130, 0.18),
+    -5px -5px 12px rgba(255, 255, 255, 0.9),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.7),
+    inset -3px -3px 6px rgba(48, 111, 130, 0.10);
+}
+.clay-icon-butter {
+  background: linear-gradient(145deg, #fffdf6, #f5dd95);
+  box-shadow:
+    6px 6px 14px rgba(160, 116, 31, 0.18),
+    -5px -5px 12px rgba(255, 255, 255, 0.9),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.7),
+    inset -3px -3px 6px rgba(160, 116, 31, 0.10);
+}
+.clay-icon-white {
+  background: linear-gradient(145deg, #ffffff, #f0f4f0);
+  box-shadow:
+    5px 5px 12px rgba(40, 48, 39, 0.12),
+    -4px -4px 10px rgba(255, 255, 255, 0.85),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.7),
+    inset -2px -2px 5px rgba(40, 48, 39, 0.06);
+}
+.clay-icon-dark {
+  background: linear-gradient(145deg, #3a4438, #283027);
+  box-shadow:
+    5px 5px 12px rgba(0, 0, 0, 0.3),
+    -4px -4px 10px rgba(80, 92, 78, 0.25),
+    inset 2px 2px 4px rgba(120, 134, 116, 0.3),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.2);
+}
+
 /* Flip card */
 .flip-card {
   perspective: 1200px;

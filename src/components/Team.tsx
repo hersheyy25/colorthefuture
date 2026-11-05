@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Users, ArrowLeft, Info } from 'lucide-react';
+import ClayIcon from './ClayIcon';
 
 type Member = {
   name: string;
@@ -119,7 +120,7 @@ export default function Team() {
       <div className="container-px">
         <div className="mx-auto max-w-2xl text-center">
           <span className="eyebrow reveal">
-            <Users className="h-3.5 w-3.5" />
+            <ClayIcon icon={Users} color="coral" size="sm" iconClassName="h-3.5 w-3.5" />
             The folks behind it all
           </span>
           <h2 className="reveal mt-5 section-title">Meet the team</h2>

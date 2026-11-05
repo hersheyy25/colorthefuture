@@ -1,5 +1,6 @@
 import { ArrowRight, Sparkles, Star } from 'lucide-react';
 import Ballpit from './Ballpit';
+import ClayIcon from './ClayIcon';
 
 export default function Hero() {
   return (
@@ -61,7 +62,7 @@ export default function Hero() {
           {/* Copy */}
           <div className="animate-fade-up">
             <span className="eyebrow">
-              <Sparkles className="h-3.5 w-3.5" />
+              <ClayIcon icon={Sparkles} color="coral" size="sm" iconClassName="h-3.5 w-3.5" />
               Youth-led &amp; heart-powered!
             </span>
             <h1 className="mt-5 font-display text-4xl font-semibold leading-[1.1] tracking-tight text-ink-800 sm:text-5xl lg:text-6xl">

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Palette, Mail, MapPin, Instagram, Facebook, Twitter, CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
+import ClayIcon from './ClayIcon';
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -38,9 +39,7 @@ export default function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <div>
             <a href="#top" className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-500 text-white">
-                <Palette className="h-5 w-5" strokeWidth={2.2} />
-              </span>
+              <ClayIcon icon={Palette} color="brand" size="sm" />
               <span className="font-display text-lg font-semibold tracking-tight text-white">
                 Color the Future
               </span>
@@ -51,18 +50,8 @@ export default function Footer() {
             </p>
 
             <div className="mt-7 flex items-center gap-3">
-              <span
-                aria-label="Instagram"
-                className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 text-ink-300 ring-1 ring-white/10"
-              >
-                <Instagram className="h-5 w-5" />
-              </span>
-              <span
-                aria-label="Facebook"
-                className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 text-ink-300 ring-1 ring-white/10"
-              >
-                <Facebook className="h-5 w-5" />
-              </span>
+              <ClayIcon icon={Instagram} color="dark" size="sm" aria-hidden="true" />
+              <ClayIcon icon={Facebook} color="dark" size="sm" aria-hidden="true" />
             </div>
           </div>
 
@@ -77,7 +66,7 @@ export default function Footer() {
 
             {state === 'success' ? (
               <div className="mt-5 flex items-center gap-3 rounded-xl bg-brand-500/15 px-4 py-3.5 ring-1 ring-brand-400/30">
-                <CheckCircle2 className="h-5 w-5 text-brand-400" />
+                <ClayIcon icon={CheckCircle2} color="dark" size="sm" iconClassName="text-brand-300" />
                 <p className="text-sm font-medium text-brand-200">
                   You're subscribed! Watch your inbox for colorful updates.
                 </p>
@@ -165,14 +154,14 @@ export default function Footer() {
               Get in touch
             </h4>
             <ul className="mt-4 space-y-3 text-sm">
-              <li className="flex items-center gap-2.5 text-ink-400">
-                <Mail className="h-4 w-4 text-brand-400" />
+              <li className="flex items-center gap-3 text-ink-400">
+                <ClayIcon icon={Mail} color="dark" size="sm" iconClassName="text-brand-400" />
                 <a href="mailto:colorthefuturfrisco@gmail.com" className="hover:text-white">
                   colorthefuturefrisco@gmail.com
                 </a>
               </li>
-              <li className="flex items-start gap-2.5 text-ink-400">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-coral-400" />
+              <li className="flex items-center gap-3 text-ink-400">
+                <ClayIcon icon={MapPin} color="dark" size="sm" iconClassName="text-coral-400" />
                 <span>Frisco</span>
               </li>
             </ul>

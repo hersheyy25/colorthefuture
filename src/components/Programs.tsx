@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Brush, Pencil, Gift, Building2, ArrowRight } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import ClayIcon from './ClayIcon';
 
 type Program = {
   icon: LucideIcon;
@@ -75,12 +76,12 @@ function ProgramCard({
         isActive ? 'clay-inset' : ''
       }`}
     >
-      <span className="clay-icon flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3">
-        <Icon
-          className={`h-6 w-6 transition-colors duration-300 ${isActive ? 'text-coral-500' : 'text-brand-600'}`}
-          strokeWidth={2}
-        />
-      </span>
+      <ClayIcon
+        icon={Icon}
+        color={isActive ? 'coral' : 'brand'}
+        size="lg"
+        className="shrink-0 transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3"
+      />
 
       <div className="min-w-0 flex-1">
         <div className="flex flex-wrap items-center gap-3">

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Heart, CheckCircle2, Loader2, AlertCircle, HandHeart } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
+import ClayIcon from './ClayIcon';
 
 const interestOptions = [
   'Leading workshops',
@@ -53,7 +54,7 @@ export default function Volunteer() {
           {/* Copy + image */}
           <div className="reveal">
             <span className="eyebrow">
-              <HandHeart className="h-3.5 w-3.5" />
+              <ClayIcon icon={HandHeart} color="coral" size="sm" iconClassName="h-3.5 w-3.5" />
               Get involved!
             </span>
             <h2 className="mt-5 section-title">
@@ -80,9 +81,7 @@ export default function Volunteer() {
           <div className="reveal card p-7 sm:p-9">
             {state === 'success' ? (
               <div className="flex flex-col items-center py-10 text-center">
-                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-100">
-                  <CheckCircle2 className="h-9 w-9 text-brand-600" />
-                </span>
+                <ClayIcon icon={CheckCircle2} color="brand" size="xl" />
                 <h3 className="mt-5 font-display text-2xl font-semibold text-ink-800">
                   Thank you for signing up!
                 </h3>
@@ -94,9 +93,7 @@ export default function Volunteer() {
             ) : (
               <>
                 <div className="flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-coral-100 text-coral-500">
-                    <Heart className="h-6 w-6" />
-                  </span>
+                  <ClayIcon icon={Heart} color="coral" size="md" />
                   <h3 className="font-display text-2xl font-semibold text-ink-800">
                     Volunteer with us
                   </h3>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Menu, X, Palette } from 'lucide-react';
+import ClayIcon from './ClayIcon';
 
 const links = [
   { label: 'About', href: '#about' },
@@ -31,9 +32,7 @@ export default function Header() {
     >
       <div className="container-px flex h-16 items-center justify-between sm:h-20">
         <a href="#top" className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-500 text-white shadow-md shadow-brand-500/30">
-            <Palette className="h-5 w-5" strokeWidth={2.2} />
-          </span>
+          <ClayIcon icon={Palette} color="brand" size="sm" />
           <span className="font-display text-lg font-semibold tracking-tight text-ink-800">
             Color the Future
           </span>

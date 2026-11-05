@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { Palette, Unlock, Users, Sparkle } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import OptionWheel from './OptionWheel';
+import ClayIcon, { type ClayColor } from './ClayIcon';
 
 type Value = {
   icon: LucideIcon;
   title: string;
   description: string;
-  accent: string;
-  bg: string;
+  color: ClayColor;
 };
 
 const values: Value[] = [
@@ -17,39 +17,34 @@ const values: Value[] = [
     title: 'Creativity',
     description:
       "Letting kids' imaginations run wild and explore every color, shape, and idea.",
-    accent: 'text-brand-600',
-    bg: 'bg-brand-100',
+    color: 'brand',
   },
   {
     icon: Unlock,
     title: 'Accessibility',
     description:
       'Breaking down barriers so every kid can join in, no matter what.',
-    accent: 'text-coral-600',
-    bg: 'bg-coral-100',
+    color: 'coral',
   },
   {
     icon: Users,
     title: 'Community',
     description:
       'Bringing people together to make stuff, share laughs, and feel like they belong.',
-    accent: 'text-sky-600',
-    bg: 'bg-sky-100',
+    color: 'sky',
   },
   {
     icon: Sparkle,
     title: 'Impact',
     description:
       'Using art to help kids feel confident, kind, and ready to make a difference.',
-    accent: 'text-butter-600',
-    bg: 'bg-butter-100',
+    color: 'butter',
   },
 ];
 
 export default function Values() {
   const [selected, setSelected] = useState(0);
   const current = values[selected];
-  const Icon = current.icon;
 
   return (
     <section id="values" className="bg-white py-20 sm:py-28">
@@ -66,12 +61,8 @@ export default function Values() {
               high-five we give out. Spin the wheel to explore each one.
             </p>
 
-            <div className="mt-8 flex items-start gap-4 rounded-3xl bg-brand-50 p-6 ring-1 ring-brand-100">
-              <span
-                className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl ${current.bg} ring-1 ring-brand-100`}
-              >
-                <Icon className={`h-7 w-7 ${current.accent}`} strokeWidth={2} />
-              </span>
+            <div className="mt-8 clay-soft flex items-start gap-4 rounded-3xl p-6">
+              <ClayIcon icon={current.icon} color={current.color} size="lg" className="shrink-0" />
               <div>
                 <h3 className="font-display text-2xl font-semibold text-ink-800">
                   {current.title}

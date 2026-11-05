@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Phone, CheckCircle2, Loader2, AlertCircle, CalendarHeart } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
+import ClayIcon from './ClayIcon';
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -49,7 +50,7 @@ export default function Workshops() {
           {/* Sign-up card */}
           <div className="reveal order-2 lg:order-1">
             <span className="eyebrow">
-              <CalendarHeart className="h-3.5 w-3.5" />
+              <ClayIcon icon={CalendarHeart} color="coral" size="sm" iconClassName="h-3.5 w-3.5" />
               Workshops
             </span>
             <h2 className="mt-5 section-title">
@@ -64,9 +65,7 @@ export default function Workshops() {
             <div className="mt-8 rounded-3xl bg-white p-7 ring-1 ring-brand-100 shadow-sm sm:p-8">
               {state === 'success' ? (
                 <div className="flex flex-col items-center py-6 text-center">
-                  <span className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-100">
-                    <CheckCircle2 className="h-9 w-9 text-brand-600" />
-                  </span>
+                  <ClayIcon icon={CheckCircle2} color="brand" size="xl" />
                   <h3 className="mt-5 font-display text-xl font-semibold text-ink-800">
                     You're on the list!
                   </h3>
