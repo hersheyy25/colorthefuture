@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Childhood';
-  src: url('/fonts/Child_Hood.otf') format('opentype');
+  font-family: 'Milkyway';
+  src: url('/fonts/milkyway-demo/Milkyway_DEMO.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -16,18 +16,26 @@
   }
   body {
     @apply font-sans text-ink-700 bg-brand-50 antialiased;
-  }
-  ::selection {
-    @apply bg-coral-200 text-ink-900;
+    letter-spacing: 0.015em;
+    line-height: 1.6;
   }
   h1, h2, h3, h4 {
     @apply font-display;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+  }
+  p {
+    line-height: 1.65;
+  }
+  ::selection {
+    @apply bg-coral-200 text-ink-900;
   }
   button,
   input,
   textarea,
   select {
     font-family: inherit;
+    letter-spacing: inherit;
   }
 }
 

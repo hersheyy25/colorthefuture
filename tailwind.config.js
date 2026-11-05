@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        display: ['"Childhood"', '"Fredoka"', 'system-ui', 'sans-serif'],
-        sans: ['"Childhood"', '"Nunito"', 'system-ui', 'sans-serif'],
+        display: ['"Milkyway"', '"Fredoka"', 'system-ui', 'sans-serif'],
+        sans: ['"Milkyway"', '"Nunito"', 'system-ui', 'sans-serif'],
       },
       colors: {
         // Sage green — primary (muted, soft, NOT neon)
