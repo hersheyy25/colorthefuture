@@ -13,34 +13,34 @@ type Program = {
 const programs: Program[] = [
   {
     title: 'Painting & Drawing',
-    description: 'Hands-on workshops where kids learn color, line, and technique—and leave with art they are super proud of.',
+    description: 'Start with a blank page, a brush, and a color you have never tried before. These workshops make room for experimenting.',
     image: 'https://images.pexels.com/photos/7898475/pexels-photo-7898475.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     alt: 'A child painting in an art workshop',
-    tag: 'Most loved',
+    tag: 'Start here',
     color: '#f6cbd1',
   },
   {
     title: 'Seasonal Crafts',
-    description: 'Family-friendly events celebrating the seasons with leaf printing, pumpkin decorating, and collaborative murals.',
+    description: 'Make leaf prints, decorate pumpkins, and add your part to a collaborative mural as the seasons change.',
     image: 'https://images.pexels.com/photos/6157559/pexels-photo-6157559.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     alt: 'A child creating colorful paper art',
-    tag: 'All ages',
+    tag: 'Make together',
     color: '#ffe39b',
   },
   {
     title: 'Public Art Projects',
-    description: 'Community murals and collaborative public art that brighten up neighborhoods and give young artists a voice.',
+    description: 'Work with other young artists on murals and public pieces that begin on a sketchbook page and end somewhere everyone can see.',
     image: 'https://images.pexels.com/photos/7026051/pexels-photo-7026051.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     alt: 'Children working together on a painting',
-    tag: 'Team effort',
+    tag: 'Out in the world',
     color: '#c5e3ed',
   },
   {
     title: 'Volunteer Opportunities',
-    description: 'Fun ways to give back—lead a workshop, mentor a young artist, or help run a community event.',
+    description: 'Lead a workshop, mentor a young artist, help set up an event, or lend a hand with outreach and public art.',
     image: 'https://images.pexels.com/photos/8042458/pexels-photo-8042458.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     alt: 'A volunteer celebrating with a child',
-    tag: 'Give back',
+    tag: 'Lend a hand',
     color: '#d8efca',
   },
 ];
@@ -81,10 +81,10 @@ export default function Programs() {
       <div className="container-px relative">
         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
-            <span className="eyebrow reveal">What we offer</span>
-            <h2 className="reveal mt-5 section-title">A little more color in every corner of life.</h2>
+            <span className="eyebrow reveal">Things we make</span>
+            <h2 className="reveal mt-5 section-title">What happens when we put the supplies on the table.</h2>
           </div>
-          <p className="reveal max-w-sm text-lg text-[#725d55]">There is a place for first-time painters, seasoned young artists, families, and anyone ready to make something together.</p>
+          <p className="reveal max-w-sm text-lg text-[#725d55]">Choose a project, try a new material, and make something alongside other people. No two tables look quite the same.</p>
         </div>
 
         <div className="mt-14 grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
@@ -101,7 +101,7 @@ export default function Programs() {
                 </div>
               </div>
             </div>
-            <p className="hand-note absolute -bottom-6 -right-3 sm:-right-10">Make something wonderful.</p>
+            <p className="hand-note absolute -bottom-6 -right-3 sm:-right-10">Pick a project. See where it goes.</p>
           </div>
 
           <div className="reveal">

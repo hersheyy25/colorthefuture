@@ -34,15 +34,15 @@ export default function Workshops() {
         <div className="grid items-center gap-14 lg:grid-cols-[1fr_0.95fr] lg:gap-20">
           <div className="reveal order-2 lg:order-1">
             <span className="eyebrow"><CalendarHeart className="h-4 w-4" strokeWidth={1.8} /> Workshops</span>
-            <h2 className="mt-5 section-title">Get a text when the next workshop opens.</h2>
-            <p className="mt-6 max-w-xl text-lg text-[#725d55]">We host free and low-cost community art workshops all year round: painting, drawing, seasonal crafts, and public art. Pop in your number and we will text you the next time we are running one.</p>
+            <h2 className="mt-5 section-title">Want the next workshop date?</h2>
+            <p className="mt-6 max-w-xl text-lg text-[#725d55]">We host free and low-cost workshops throughout the year, with painting, drawing, seasonal crafts, and public art on the table. Leave your number and we will text you when the next one is ready.</p>
 
             <div className="paper-card mt-9 p-7 sm:p-9">
               {state === 'success' ? (
                 <div className="flex flex-col items-center py-6 text-center">
                   <CheckCircle2 className="h-12 w-12 text-[#6caa68]" strokeWidth={1.5} />
-                  <h3 className="mt-5 text-3xl">You are on the list!</h3>
-                  <p className="mt-2 max-w-sm text-sm text-[#806960]">We will text you the details the next time we host a workshop.</p>
+                  <h3 className="mt-5 text-3xl">You are on the workshop list.</h3>
+                  <p className="mt-2 max-w-sm text-sm text-[#806960]">We will send the details when the next workshop is announced.</p>
                   <button type="button" onClick={() => { setState('idle'); setPhone(''); }} className="btn-ghost mt-5">Add another number</button>
                 </div>
               ) : (
@@ -56,9 +56,9 @@ export default function Workshops() {
                   </label>
                   {state === 'error' && <p className="flex items-center gap-2 text-sm font-bold text-[#c95168]"><AlertCircle className="h-4 w-4" />{errorMsg}</p>}
                   <button type="submit" disabled={state === 'submitting'} className="btn-primary w-full disabled:opacity-70">
-                    {state === 'submitting' ? <><Loader2 className="h-4 w-4 animate-spin" />Saving…</> : 'Notify me'}
+                    {state === 'submitting' ? <><Loader2 className="h-4 w-4 animate-spin" />Saving…</> : 'Text me the next date'}
                   </button>
-                  <p className="text-center text-xs text-[#a37f72]">We will only text you about upcoming workshops.</p>
+                  <p className="text-center text-xs text-[#a37f72]">Only upcoming workshop texts. Nothing else.</p>
                 </form>
               )}
             </div>
@@ -72,8 +72,8 @@ export default function Workshops() {
                 </div>
               ))}
               <div className="note-card flex flex-col items-center justify-center p-4 text-center">
-                <p className="font-display text-2xl text-[#8c5946]">Price = free!</p>
-                <p className="mt-1 text-xs font-extrabold uppercase tracking-[0.12em] text-[#a37f72]">All ages welcome</p>
+                <p className="font-display text-2xl text-[#8c5946]">Free + low-cost</p>
+                <p className="mt-1 text-xs font-extrabold uppercase tracking-[0.12em] text-[#a37f72]">Kids, teens, and families</p>
               </div>
             </div>
           </div>

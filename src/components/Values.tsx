@@ -8,10 +8,10 @@ type Value = {
 };
 
 const values: Value[] = [
-  { title: 'Creativity', description: "Letting kids' imaginations run wild and explore every color, shape, and idea.", color: '#d8efca' },
-  { title: 'Accessibility', description: 'Breaking down barriers so every kid can join in, no matter what.', color: '#f6cbd1' },
-  { title: 'Community', description: 'Bringing people together to make stuff, share laughs, and feel like they belong.', color: '#c5e3ed' },
-  { title: 'Impact', description: 'Using art to help kids feel confident, kind, and ready to make a difference.', color: '#ffe39b' },
+  { title: 'Creativity', description: "Leave space for an unexpected color, a strange shape, or an idea that was not in the plan.", color: '#d8efca' },
+  { title: 'Accessibility', description: 'Keep cost and confidence from being the reason someone stays home.', color: '#f6cbd1' },
+  { title: 'Community', description: 'Make beside other people, share the table, and leave knowing you were part of the picture.', color: '#c5e3ed' },
+  { title: 'Impact', description: 'Let a finished piece, a new skill, or a brave first try travel with a kid after the workshop ends.', color: '#ffe39b' },
 ];
 
 export default function Values() {
@@ -23,9 +23,9 @@ export default function Values() {
       <div className="container-px">
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
           <div className="reveal">
-            <span className="eyebrow">What we stand for</span>
-            <h2 className="mt-5 section-title">Four things we care about a whole lot.</h2>
-            <p className="mt-6 max-w-xl text-lg text-[#725d55]">These are the values that shape every workshop, event, and high-five. Explore them like pages in a sketchbook.</p>
+            <span className="eyebrow">The way we work</span>
+            <h2 className="mt-5 section-title">Four things that guide the work.</h2>
+            <p className="mt-6 max-w-xl text-lg text-[#725d55]">They show up in the details: who gets a seat, what materials are available, and how much room there is to try again.</p>
             <div className="paper-card mt-9 flex items-start gap-5 p-6 sm:p-8" style={{ borderTop: `8px solid ${current.color}` }}>
               <span className="mt-1 h-5 w-5 shrink-0 rounded-full" style={{ backgroundColor: current.color }} />
               <div>
@@ -39,7 +39,7 @@ export default function Values() {
           <div className="reveal relative">
             <span className="tape -right-3 top-8 rotate-12" />
             <div className="paper-card relative h-[420px] overflow-hidden bg-[#fffdf8]">
-              <div className="absolute left-6 top-6 font-display text-2xl text-[#c95168]">Our little compass</div>
+              <div className="absolute left-6 top-6 font-display text-2xl text-[#c95168]">A few things we keep close</div>
               <OptionWheel
                 items={values.map((value) => value.title)}
                 defaultSelected={0}
@@ -58,7 +58,7 @@ export default function Values() {
                 draggable
                 onChange={(index) => setSelected(index)}
               />
-              <span className="absolute bottom-6 right-7 rotate-6 font-display text-lg text-[#a37f72]">keep exploring →</span>
+              <span className="absolute bottom-6 right-7 rotate-6 font-display text-lg text-[#a37f72]">look around →</span>
             </div>
           </div>
         </div>

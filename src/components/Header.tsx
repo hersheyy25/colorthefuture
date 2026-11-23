@@ -51,7 +51,7 @@ export default function Header() {
 
         <div className="hidden lg:block">
           <a href="#workshops" className="btn-primary px-5 py-2.5">
-            Join a workshop
+            Find a workshop
           </a>
         </div>
 
@@ -79,7 +79,7 @@ export default function Header() {
             </a>
           ))}
           <a href="#workshops" onClick={() => setOpen(false)} className="btn-primary mt-2 w-full">
-            Join a workshop
+            Find a workshop
           </a>
         </nav>
       </div>

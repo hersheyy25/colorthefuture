@@ -9,10 +9,10 @@ export default function CtaBand() {
           <Sparkles className="pointer-events-none absolute left-[10%] top-[18%] h-8 w-8 rotate-12 text-white/70" />
           <Sparkles className="pointer-events-none absolute bottom-[18%] right-[10%] h-6 w-6 -rotate-12 text-white/70" />
           <div className="relative mx-auto max-w-2xl">
-            <p className="font-sans text-xs font-extrabold uppercase tracking-[0.18em] text-[#9d4359]">There is room for you here</p>
-            <h2 className="mt-4 text-4xl text-white sm:text-5xl">Help us paint a brighter future.</h2>
-            <p className="mx-auto mt-5 max-w-xl text-lg text-[#fff8f3]">Join a workshop, volunteer your time, or subscribe for updates. There is a place for everyone at Color the Future.</p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3"><a href="#workshops" className="btn bg-[#fffdf8] text-[#c95168] hover:-translate-y-0.5 hover:bg-white">Join the fun <ArrowRight className="h-4 w-4" /></a><a href="#volunteer" className="btn bg-[#c95168] text-white hover:-translate-y-0.5 hover:bg-[#ad435c]">Become a volunteer</a></div>
+            <p className="font-sans text-xs font-extrabold uppercase tracking-[0.18em] text-[#9d4359]">Pick a way to take part</p>
+            <h2 className="mt-4 text-4xl text-white sm:text-5xl">Come by, lend a hand, or stay in the loop.</h2>
+            <p className="mx-auto mt-5 max-w-xl text-lg text-[#fff8f3]">Try a workshop, tell us how you would like to help, or sign up for the next update. Start wherever you are.</p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3"><a href="#workshops" className="btn bg-[#fffdf8] text-[#c95168] hover:-translate-y-0.5 hover:bg-white">See the workshops <ArrowRight className="h-4 w-4" /></a><a href="#volunteer" className="btn bg-[#c95168] text-white hover:-translate-y-0.5 hover:bg-[#ad435c]">Volunteer with us</a></div>
           </div>
         </div>
       </div>

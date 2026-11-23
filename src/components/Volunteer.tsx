@@ -36,9 +36,9 @@ export default function Volunteer() {
       <div className="container-px">
         <div className="grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
           <div className="reveal">
-            <span className="eyebrow"><HandHeart className="h-4 w-4" strokeWidth={1.8} /> Get involved</span>
-            <h2 className="mt-5 section-title">Share your time. Spark a young artist&apos;s confidence.</h2>
-            <p className="mt-7 max-w-xl text-lg text-[#725d55]">Volunteers are the heart of Color the Future. Whether you are an artist, a regular student, or simply someone who cares, there is a spot for you.</p>
+            <span className="eyebrow"><HandHeart className="h-4 w-4" strokeWidth={1.8} /> Ways to help</span>
+            <h2 className="mt-5 section-title">There is more than one way to help.</h2>
+            <p className="mt-7 max-w-xl text-lg text-[#725d55]">You can lead a workshop, mentor a young artist, help with event setup, support outreach, or join a public art project. Tell us what sounds like a good fit.</p>
             <div className="photo-frame relative mt-9 rotate-2 max-w-lg">
               <span className="tape -right-7 top-8 rotate-12" />
               <img src="/HappyCTF.jpeg" alt="A Color the Future community moment" className="aspect-[16/10] w-full object-cover" loading="lazy" />
@@ -49,13 +49,13 @@ export default function Volunteer() {
             {state === 'success' ? (
               <div className="flex flex-col items-center py-10 text-center">
                 <CheckCircle2 className="h-12 w-12 text-[#6caa68]" strokeWidth={1.5} />
-                <h3 className="mt-5 text-3xl">Thank you for signing up!</h3>
-                <p className="mt-2 max-w-sm text-[#806960]">We got your volunteer interest. Our team will reach out soon with opportunities that match what you would like to do.</p>
+                <h3 className="mt-5 text-3xl">Thanks for raising your hand.</h3>
+                <p className="mt-2 max-w-sm text-[#806960]">We have your details and the kinds of projects you are interested in. Our team will follow up with next steps.</p>
               </div>
             ) : (
               <>
-                <div className="flex items-center gap-3"><Heart className="h-6 w-6 text-[#ef7185]" fill="currentColor" strokeWidth={1.5} /><h3 className="text-3xl">Volunteer with us</h3></div>
-                <p className="mt-2 text-sm text-[#806960]">Tell us a little about yourself and how you would like to help.</p>
+                <div className="flex items-center gap-3"><Heart className="h-6 w-6 text-[#ef7185]" fill="currentColor" strokeWidth={1.5} /><h3 className="text-3xl">Tell us how you would like to help</h3></div>
+                <p className="mt-2 text-sm text-[#806960]">A few details will help us connect you with the right kind of project.</p>
                 <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <label className="block"><span className="mb-2 block text-sm font-extrabold text-[#6c5149]">Full name</span><input type="text" required value={name} onChange={(event) => setName(event.target.value)} placeholder="Jamie Rivera" className="input" /></label>
@@ -65,7 +65,7 @@ export default function Volunteer() {
                   <div><span className="mb-2 block text-sm font-extrabold text-[#6c5149]">I&apos;m interested in…</span><div className="flex flex-wrap gap-2">{interestOptions.map((option) => { const active = interests.includes(option); return <button key={option} type="button" onClick={() => toggleInterest(option)} className={`rounded-full px-3.5 py-2 text-sm font-bold transition ${active ? 'bg-[#f05b78] text-white' : 'bg-[#fffaf3] text-[#806960] ring-1 ring-[#ead7c9] hover:bg-white'}`}>{option}</button>; })}</div></div>
                   <label className="block"><span className="mb-2 block text-sm font-extrabold text-[#6c5149]">Anything else? <span className="font-normal text-[#a37f72]">(optional)</span></span><textarea rows={3} value={message} onChange={(event) => setMessage(event.target.value)} placeholder="Tell us about your experience or availability…" className="input resize-none" /></label>
                   {state === 'error' && <p className="flex items-center gap-2 text-sm font-bold text-[#c95168]"><AlertCircle className="h-4 w-4" />{errorMsg}</p>}
-                  <button type="submit" disabled={state === 'submitting'} className="btn-primary w-full disabled:opacity-70">{state === 'submitting' ? <><Loader2 className="h-4 w-4 animate-spin" />Submitting…</> : 'Submit volunteer sign-up'}</button>
+                  <button type="submit" disabled={state === 'submitting'} className="btn-primary w-full disabled:opacity-70">{state === 'submitting' ? <><Loader2 className="h-4 w-4 animate-spin" />Submitting…</> : 'Send my volunteer details'}</button>
                 </form>
               </>
             )}
