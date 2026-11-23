@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Menu, X, Palette } from 'lucide-react';
-import ClayIcon from './ClayIcon';
+import { Menu, X } from 'lucide-react';
 
 const links = [
   { label: 'About', href: '#about' },
@@ -25,72 +24,64 @@ export default function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/85 backdrop-blur-md shadow-sm ring-1 ring-brand-100'
-          : 'bg-transparent'
+        scrolled ? 'border-b border-[#ead7c9] bg-[#fffaf3]/95 backdrop-blur-sm' : 'bg-transparent'
       }`}
     >
-      <div className="container-px flex h-16 items-center justify-between sm:h-20">
-        <a href="#top" className="flex items-center gap-2.5">
-          <ClayIcon icon={Palette} color="brand" size="sm" />
-          <span className="font-display text-lg font-semibold tracking-tight text-ink-800">
+      <div className="container-px flex h-[76px] items-center justify-between">
+        <a href="#top" className="flex items-center gap-3" aria-label="Color the Future home">
+          <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-[#dcffd8] ring-1 ring-[#ccecc8]">
+            <img src="/ColorTheFutureLogo.png" alt="" className="h-full w-full object-contain" />
+          </span>
+          <span className="hidden font-sans text-sm font-extrabold uppercase tracking-[0.12em] text-[#503f3a] sm:inline">
             Color the Future
           </span>
         </a>
 
-        <nav className="hidden items-center gap-1 md:flex">
-          {links.map((l) => (
+        <nav className="hidden items-center gap-1 lg:flex">
+          {links.map((link) => (
             <a
-              key={l.href}
-              href={l.href}
-              className="rounded-full px-4 py-2 text-sm font-medium text-ink-600 transition-colors hover:bg-brand-100 hover:text-ink-800"
+              key={link.href}
+              href={link.href}
+              className="rounded-full px-3 py-2 text-sm font-bold text-[#806960] transition-colors hover:bg-[#fff0e4] hover:text-[#c95168]"
             >
-              {l.label}
+              {link.label}
             </a>
           ))}
         </nav>
 
-        <div className="hidden md:block">
-          <a href="#workshops" className="btn-primary">
-            Join the Fun
+        <div className="hidden lg:block">
+          <a href="#workshops" className="btn-primary px-5 py-2.5">
+            Join a workshop
           </a>
         </div>
 
         <button
           type="button"
-          onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-xl text-ink-700 ring-1 ring-brand-200 md:hidden"
-          aria-label="Toggle menu"
+          onClick={() => setOpen((value) => !value)}
+          className="flex h-10 w-10 items-center justify-center rounded-xl text-[#503f3a] ring-1 ring-[#e7cfc1] lg:hidden"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
-      {/* Mobile menu */}
-      <div
-        className={`md:hidden overflow-hidden transition-[max-height] duration-300 ${
-          open ? 'max-h-96' : 'max-h-0'
-        }`}
-      >
-        <div className="container-px space-y-1 bg-white/95 pb-5 pt-2 backdrop-blur-md">
-          {links.map((l) => (
+      <div className={`overflow-hidden transition-[max-height] duration-300 lg:hidden ${open ? 'max-h-[520px]' : 'max-h-0'}`}>
+        <nav className="container-px space-y-1 border-t border-[#ead7c9] bg-[#fffaf3] pb-5 pt-3">
+          {links.map((link) => (
             <a
-              key={l.href}
-              href={l.href}
+              key={link.href}
+              href={link.href}
               onClick={() => setOpen(false)}
-              className="block rounded-xl px-4 py-3 text-base font-medium text-ink-700 hover:bg-brand-100"
+              className="block rounded-xl px-4 py-3 text-base font-bold text-[#6c5149] hover:bg-[#fff0e4]"
             >
-              {l.label}
+              {link.label}
             </a>
           ))}
-          <a
-            href="#workshops"
-            onClick={() => setOpen(false)}
-            className="btn-primary mt-2 w-full"
-          >
-            Join the Fun
+          <a href="#workshops" onClick={() => setOpen(false)} className="btn-primary mt-2 w-full">
+            Join a workshop
           </a>
-        </div>
+        </nav>
       </div>
     </header>
   );

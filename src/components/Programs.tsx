@@ -1,116 +1,72 @@
 import { useState } from 'react';
-import { Brush, Pencil, Gift, Building2, ArrowRight } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
-import ClayIcon from './ClayIcon';
+import { ArrowRight } from 'lucide-react';
 
 type Program = {
-  icon: LucideIcon;
   title: string;
   description: string;
   image: string;
   alt: string;
   tag: string;
+  color: string;
 };
 
 const programs: Program[] = [
   {
-    icon: Brush,
     title: 'Painting & Drawing',
-    description:
-      'Hands-on workshops where kids learn color, line, and technique—and leave with art they are super proud of.',
-    image:
-      'https://images.pexels.com/photos/7898475/pexels-photo-7898475.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    alt: 'A smiling child painting with their hands in an art workshop',
+    description: 'Hands-on workshops where kids learn color, line, and technique—and leave with art they are super proud of.',
+    image: 'https://images.pexels.com/photos/7898475/pexels-photo-7898475.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    alt: 'A child painting in an art workshop',
     tag: 'Most loved',
+    color: '#f6cbd1',
   },
   {
-    icon: Gift,
     title: 'Seasonal Crafts',
-    description:
-      'Family-friendly events celebrating the seasons with leaf printing, pumpkin decorating, and collaborative murals.',
-    image:
-      'https://images.pexels.com/photos/6157559/pexels-photo-6157559.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    alt: 'A child painting with red and blue colors on a paper banner',
+    description: 'Family-friendly events celebrating the seasons with leaf printing, pumpkin decorating, and collaborative murals.',
+    image: 'https://images.pexels.com/photos/6157559/pexels-photo-6157559.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    alt: 'A child creating colorful paper art',
     tag: 'All ages',
+    color: '#ffe39b',
   },
   {
-    icon: Building2,
     title: 'Public Art Projects',
-    description:
-      'Community murals and collaborative public art that brighten up neighborhoods and give young artists a voice.',
-    image:
-      'https://images.pexels.com/photos/7026051/pexels-photo-7026051.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    alt: 'Three children enjoying a creative painting session surrounded by colorful paints',
+    description: 'Community murals and collaborative public art that brighten up neighborhoods and give young artists a voice.',
+    image: 'https://images.pexels.com/photos/7026051/pexels-photo-7026051.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    alt: 'Children working together on a painting',
     tag: 'Team effort',
+    color: '#c5e3ed',
   },
   {
-    icon: Pencil,
     title: 'Volunteer Opportunities',
-    description:
-      'Fun ways to give back—lead a workshop, mentor a young artist, or help run a community event.',
-    image:
-      'https://images.pexels.com/photos/8042458/pexels-photo-8042458.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    alt: 'A woman giving a child a high five in a vibrant community setting',
+    description: 'Fun ways to give back—lead a workshop, mentor a young artist, or help run a community event.',
+    image: 'https://images.pexels.com/photos/8042458/pexels-photo-8042458.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    alt: 'A volunteer celebrating with a child',
     tag: 'Give back',
+    color: '#d8efca',
   },
 ];
 
-function ProgramCard({
-  program,
-  isActive,
-  onSelect,
-}: {
-  program: Program;
-  isActive: boolean;
-  onSelect: () => void;
-}) {
-  const Icon = program.icon;
-
+function ProgramTab({ program, index, active, onSelect }: { program: Program; index: number; active: boolean; onSelect: () => void }) {
   return (
     <button
       type="button"
       onMouseEnter={onSelect}
       onFocus={onSelect}
       onClick={onSelect}
-      className={`clay clay-hover group flex w-full items-start gap-5 rounded-[1.75rem] p-5 text-left ring-0 sm:p-6 ${
-        isActive ? 'clay-inset' : ''
-      }`}
+      className={`group flex w-full items-start gap-4 border-b border-[#ead7c9] py-5 text-left transition-all first:border-t ${active ? 'translate-x-2' : 'hover:translate-x-1'}`}
     >
-      <ClayIcon
-        icon={Icon}
-        color={isActive ? 'coral' : 'brand'}
-        size="lg"
-        className="shrink-0 transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3"
-      />
-
-      <div className="min-w-0 flex-1">
-        <div className="flex flex-wrap items-center gap-3">
-          <h3 className="font-display text-lg font-semibold text-ink-800">
-            {program.title}
-          </h3>
-          <span className="clay-pill rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-coral-600">
-            {program.tag}
-          </span>
-        </div>
-
-        <p
-          className={`grid transition-all duration-500 ease-out ${
-            isActive
-              ? 'grid-rows-[1fr] opacity-100'
-              : 'grid-rows-[0fr] opacity-0'
-          }`}
-        >
-          <span className="overflow-hidden">
-            <span className="mt-3 block text-sm leading-relaxed text-ink-600">
-              {program.description}
-            </span>
-            <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 transition-colors group-hover:text-brand-700">
-              Get involved
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </span>
-          </span>
-        </p>
-      </div>
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full font-sans text-xs font-extrabold text-[#6c5149]" style={{ backgroundColor: program.color }}>
+        0{index + 1}
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="flex flex-wrap items-center gap-3">
+          <span className="font-display text-2xl text-[#503f3a]">{program.title}</span>
+          <span className="font-sans text-[0.65rem] font-extrabold uppercase tracking-[0.14em] text-[#c95168]">{program.tag}</span>
+        </span>
+        <span className={`grid transition-all duration-300 ${active ? 'mt-2 grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+          <span className="overflow-hidden font-sans text-sm leading-relaxed text-[#806960]">{program.description}</span>
+        </span>
+      </span>
+      <ArrowRight className={`mt-2 h-5 w-5 shrink-0 text-[#ef7185] transition-transform ${active ? 'translate-x-1' : 'group-hover:translate-x-1'}`} />
     </button>
   );
 }
@@ -120,63 +76,37 @@ export default function Programs() {
   const current = programs[active];
 
   return (
-    <section id="programs" className="relative overflow-hidden py-20 sm:py-28">
-      {/* soft clay background blobs */}
-      <div className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-brand-100/60 blur-3xl" />
-      <div className="pointer-events-none absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-coral-100/40 blur-3xl" />
-
+    <section id="programs" className="relative overflow-hidden bg-[#fff0e4] py-24 sm:py-32">
+      <div className="pointer-events-none absolute -right-16 top-20 h-72 w-72 rounded-full bg-[#ffe39b]/45 blur-3xl" />
       <div className="container-px relative">
-        <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
-          <div className="max-w-xl">
+        <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+          <div className="max-w-2xl">
             <span className="eyebrow reveal">What we offer</span>
-            <h2 className="reveal mt-5 section-title">
-              Programs that spark creativity and connection
-            </h2>
+            <h2 className="reveal mt-5 section-title">A little more color in every corner of life.</h2>
           </div>
-          <p className="reveal max-w-sm text-base text-ink-600">
-            From first-time painters to seasoned young artists, there's a place
-            for everyone to create, learn, and grow.
-          </p>
+          <p className="reveal max-w-sm text-lg text-[#725d55]">There is a place for first-time painters, seasoned young artists, families, and anyone ready to make something together.</p>
         </div>
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-2 lg:gap-12">
-          {/* Left: claymorphism image preview that changes on hover */}
-          <div className="reveal clay rounded-[2rem] p-4 sm:p-6">
-            <div className="clay-inset relative aspect-[4/5] w-full overflow-hidden rounded-[1.5rem]">
-              {programs.map((p, i) => (
-                <img
-                  key={p.title}
-                  src={p.image}
-                  alt={p.alt}
-                  loading="lazy"
-                  className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ease-out ${
-                    active === i
-                      ? 'scale-100 opacity-100 blur-0'
-                      : 'scale-105 opacity-0 blur-sm'
-                  }`}
-                />
-              ))}
-              <div className="absolute inset-0 bg-gradient-to-t from-ink-900/55 via-ink-900/10 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7">
-                <div className="clay-pill inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-bold uppercase tracking-wide text-coral-600">
-                  {current.tag}
+        <div className="mt-14 grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
+          <div className="reveal relative mx-auto w-full max-w-lg">
+            <span className="tape -left-6 top-10 -rotate-12" />
+            <div className="paper-frame rotate-2 p-4 sm:p-5">
+              <div className="relative aspect-[4/5] overflow-hidden bg-[#e7f2e4]">
+                {programs.map((program, index) => (
+                  <img key={program.title} src={program.image} alt={program.alt} loading="lazy" className={`absolute inset-0 h-full w-full object-cover transition-all duration-500 ${active === index ? 'scale-100 opacity-100' : 'scale-105 opacity-0'}`} />
+                ))}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#503f3a]/70 to-transparent p-6 pt-24">
+                  <p className="font-sans text-xs font-extrabold uppercase tracking-[0.16em] text-white/80">{current.tag}</p>
+                  <h3 className="mt-2 font-display text-3xl text-white">{current.title}</h3>
                 </div>
-                <h3 className="mt-3 font-display text-2xl font-semibold text-white drop-shadow-sm">
-                  {current.title}
-                </h3>
               </div>
             </div>
+            <p className="hand-note absolute -bottom-6 -right-3 sm:-right-10">Make something wonderful.</p>
           </div>
 
-          {/* Right: clay program cards */}
-          <div className="reveal flex flex-col justify-center gap-4">
-            {programs.map((p, i) => (
-              <ProgramCard
-                key={p.title}
-                program={p}
-                isActive={active === i}
-                onSelect={() => setActive(i)}
-              />
+          <div className="reveal">
+            {programs.map((program, index) => (
+              <ProgramTab key={program.title} program={program} index={index} active={active === index} onSelect={() => setActive(index)} />
             ))}
           </div>
         </div>

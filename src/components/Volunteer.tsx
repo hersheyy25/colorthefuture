@@ -1,16 +1,8 @@
 import { useState } from 'react';
 import { Heart, CheckCircle2, Loader2, AlertCircle, HandHeart } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
-import ClayIcon from './ClayIcon';
 
-const interestOptions = [
-  'Leading workshops',
-  'Mentoring young artists',
-  'Event setup & support',
-  'Fundraising & outreach',
-  'Public art projects',
-];
-
+const interestOptions = ['Leading workshops', 'Mentoring young artists', 'Event setup & support', 'Fundraising & outreach', 'Public art projects'];
 type FormState = 'idle' | 'submitting' | 'success' | 'error';
 
 export default function Volunteer() {
@@ -22,23 +14,15 @@ export default function Volunteer() {
   const [state, setState] = useState<FormState>('idle');
   const [errorMsg, setErrorMsg] = useState('');
 
-  function toggleInterest(opt: string) {
-    setInterests((prev) =>
-      prev.includes(opt) ? prev.filter((i) => i !== opt) : [...prev, opt],
-    );
+  function toggleInterest(option: string) {
+    setInterests((current) => current.includes(option) ? current.filter((item) => item !== option) : [...current, option]);
   }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setState('submitting');
     setErrorMsg('');
-    const { error } = await supabase.from('volunteers').insert({
-      name: name.trim(),
-      email: email.trim(),
-      phone: phone.trim() || null,
-      interests: interests.join(', '),
-      message: message.trim() || null,
-    });
+    const { error } = await supabase.from('volunteers').insert({ name: name.trim(), email: email.trim(), phone: phone.trim() || null, interests: interests.join(', '), message: message.trim() || null });
     if (error) {
       setState('error');
       setErrorMsg('Oops, something went wrong. Please try again in a moment.');
@@ -48,162 +32,40 @@ export default function Volunteer() {
   }
 
   return (
-    <section id="volunteer" className="py-20 sm:py-28">
+    <section id="volunteer" className="bg-[#fff0e4] py-24 sm:py-32">
       <div className="container-px">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Copy + image */}
+        <div className="grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
           <div className="reveal">
-            <span className="eyebrow">
-              <ClayIcon icon={HandHeart} color="coral" size="sm" iconClassName="h-3.5 w-3.5" />
-              Get involved!
-            </span>
-            <h2 className="mt-5 section-title">
-              Share your time, spark a young artist's confidence 🩷
-            </h2>
-            <p className="mt-6 text-lg leading-relaxed text-ink-600">
-              Volunteers are the heart of Color the Future. Whether you're an
-              artist, a regular student, or just someone who cares, we have a
-              spot for you! Help run a workshop, mentor a young artist, support
-              an event, or lend a hand behind the scenes.
-            </p>
-
-            <div className="mt-8 overflow-hidden rounded-3xl shadow-lg ring-1 ring-brand-100">
-              <img
-                src="HappyCTF.jpeg"
-                alt="Group of hands holding paintbrushes together in a vibrant art workshop"
-                className="aspect-[16/10] w-full object-cover"
-                loading="lazy"
-              />
+            <span className="eyebrow"><HandHeart className="h-4 w-4" strokeWidth={1.8} /> Get involved</span>
+            <h2 className="mt-5 section-title">Share your time. Spark a young artist&apos;s confidence.</h2>
+            <p className="mt-7 max-w-xl text-lg text-[#725d55]">Volunteers are the heart of Color the Future. Whether you are an artist, a regular student, or simply someone who cares, there is a spot for you.</p>
+            <div className="photo-frame relative mt-9 rotate-2 max-w-lg">
+              <span className="tape -right-7 top-8 rotate-12" />
+              <img src="/HappyCTF.jpeg" alt="A Color the Future community moment" className="aspect-[16/10] w-full object-cover" loading="lazy" />
             </div>
           </div>
 
-          {/* Form */}
-          <div className="reveal card p-7 sm:p-9">
+          <div className="reveal paper-card p-7 sm:p-9">
             {state === 'success' ? (
               <div className="flex flex-col items-center py-10 text-center">
-                <ClayIcon icon={CheckCircle2} color="brand" size="xl" />
-                <h3 className="mt-5 font-display text-2xl font-semibold text-ink-800">
-                  Thank you for signing up!
-                </h3>
-                <p className="mt-2 max-w-sm text-ink-600">
-                  We got your volunteer interest. Our team will reach out soon
-                  with opportunities that match what you'd like to do.
-                </p>
+                <CheckCircle2 className="h-12 w-12 text-[#6caa68]" strokeWidth={1.5} />
+                <h3 className="mt-5 text-3xl">Thank you for signing up!</h3>
+                <p className="mt-2 max-w-sm text-[#806960]">We got your volunteer interest. Our team will reach out soon with opportunities that match what you would like to do.</p>
               </div>
             ) : (
               <>
-                <div className="flex items-center gap-3">
-                  <ClayIcon icon={Heart} color="coral" size="md" />
-                  <h3 className="font-display text-2xl font-semibold text-ink-800">
-                    Volunteer with us
-                  </h3>
-                </div>
-                <p className="mt-2 text-sm text-ink-500">
-                  Tell us a little about yourself and how you'd like to help.
-                </p>
-
+                <div className="flex items-center gap-3"><Heart className="h-6 w-6 text-[#ef7185]" fill="currentColor" strokeWidth={1.5} /><h3 className="text-3xl">Volunteer with us</h3></div>
+                <p className="mt-2 text-sm text-[#806960]">Tell us a little about yourself and how you would like to help.</p>
                 <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
                   <div className="grid gap-4 sm:grid-cols-2">
-                    <label className="block">
-                      <span className="mb-1.5 block text-sm font-medium text-ink-700">
-                        Full name
-                      </span>
-                      <input
-                        type="text"
-                        required
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder="Jamie Rivera"
-                        className="input"
-                      />
-                    </label>
-                    <label className="block">
-                      <span className="mb-1.5 block text-sm font-medium text-ink-700">
-                        Email
-                      </span>
-                      <input
-                        type="email"
-                        required
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="you@example.com"
-                        className="input"
-                      />
-                    </label>
+                    <label className="block"><span className="mb-2 block text-sm font-extrabold text-[#6c5149]">Full name</span><input type="text" required value={name} onChange={(event) => setName(event.target.value)} placeholder="Jamie Rivera" className="input" /></label>
+                    <label className="block"><span className="mb-2 block text-sm font-extrabold text-[#6c5149]">Email</span><input type="email" required value={email} onChange={(event) => setEmail(event.target.value)} placeholder="you@example.com" className="input" /></label>
                   </div>
-
-                  <label className="block">
-                    <span className="mb-1.5 block text-sm font-medium text-ink-700">
-                      Phone <span className="text-ink-400">(optional)</span>
-                    </span>
-                    <input
-                      type="tel"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      placeholder="(555) 123-4567"
-                      className="input"
-                    />
-                  </label>
-
-                  <div>
-                    <span className="mb-2 block text-sm font-medium text-ink-700">
-                      I'm interested in…
-                    </span>
-                    <div className="flex flex-wrap gap-2">
-                      {interestOptions.map((opt) => {
-                        const active = interests.includes(opt);
-                        return (
-                          <button
-                            key={opt}
-                            type="button"
-                            onClick={() => toggleInterest(opt)}
-                            className={`rounded-full px-3.5 py-2 text-sm font-medium transition ${
-                              active
-                                ? 'bg-brand-500 text-white shadow-sm shadow-brand-500/30'
-                                : 'bg-brand-50 text-ink-600 ring-1 ring-brand-200 hover:bg-brand-100'
-                            }`}
-                          >
-                            {opt}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  <label className="block">
-                    <span className="mb-1.5 block text-sm font-medium text-ink-700">
-                      Anything else? <span className="text-ink-400">(optional)</span>
-                    </span>
-                    <textarea
-                      rows={3}
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      placeholder="Tell us about your experience or availability…"
-                      className="input resize-none"
-                    />
-                  </label>
-
-                  {state === 'error' && (
-                    <p className="flex items-center gap-2 text-sm font-medium text-coral-600">
-                      <AlertCircle className="h-4 w-4" />
-                      {errorMsg}
-                    </p>
-                  )}
-
-                  <button
-                    type="submit"
-                    disabled={state === 'submitting'}
-                    className="btn-primary w-full disabled:opacity-70"
-                  >
-                    {state === 'submitting' ? (
-                      <>
-                        <Loader2 className="h-4 w-4 animate-spin" />
-                        Submitting…
-                      </>
-                    ) : (
-                      'Submit Volunteer Sign-Up'
-                    )}
-                  </button>
+                  <label className="block"><span className="mb-2 block text-sm font-extrabold text-[#6c5149]">Phone <span className="font-normal text-[#a37f72]">(optional)</span></span><input type="tel" value={phone} onChange={(event) => setPhone(event.target.value)} placeholder="(555) 123-4567" className="input" /></label>
+                  <div><span className="mb-2 block text-sm font-extrabold text-[#6c5149]">I&apos;m interested in…</span><div className="flex flex-wrap gap-2">{interestOptions.map((option) => { const active = interests.includes(option); return <button key={option} type="button" onClick={() => toggleInterest(option)} className={`rounded-full px-3.5 py-2 text-sm font-bold transition ${active ? 'bg-[#f05b78] text-white' : 'bg-[#fffaf3] text-[#806960] ring-1 ring-[#ead7c9] hover:bg-white'}`}>{option}</button>; })}</div></div>
+                  <label className="block"><span className="mb-2 block text-sm font-extrabold text-[#6c5149]">Anything else? <span className="font-normal text-[#a37f72]">(optional)</span></span><textarea rows={3} value={message} onChange={(event) => setMessage(event.target.value)} placeholder="Tell us about your experience or availability…" className="input resize-none" /></label>
+                  {state === 'error' && <p className="flex items-center gap-2 text-sm font-bold text-[#c95168]"><AlertCircle className="h-4 w-4" />{errorMsg}</p>}
+                  <button type="submit" disabled={state === 'submitting'} className="btn-primary w-full disabled:opacity-70">{state === 'submitting' ? <><Loader2 className="h-4 w-4 animate-spin" />Submitting…</> : 'Submit volunteer sign-up'}</button>
                 </form>
               </>
             )}

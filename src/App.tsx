@@ -19,7 +19,7 @@ function App() {
   }, []);
 
   return (
-    <div ref={ref} className="min-h-screen bg-ink-50">
+    <div ref={ref} className="min-h-screen bg-[#fffaf3]">
       <Header />
       <main>
         <Hero />

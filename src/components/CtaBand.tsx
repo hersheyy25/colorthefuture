@@ -1,41 +1,18 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
 export default function CtaBand() {
   return (
-    <section className="py-20 sm:py-24">
+    <section className="bg-[#fffaf3] py-24 sm:py-28">
       <div className="container-px">
-        <div className="reveal relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-brand-400 via-brand-500 to-coral-300 px-7 py-14 text-center shadow-2xl shadow-brand-500/20 sm:px-12 sm:py-20">
-          {/* decorative dots */}
-          <div className="pointer-events-none absolute inset-0 dot-divider text-white/10" />
-          <span className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
-          <span className="pointer-events-none absolute -bottom-12 -left-8 h-44 w-44 rounded-full bg-coral-100/30 blur-2xl" />
-          {/* whimsical floating dots */}
-          <span className="pointer-events-none absolute left-[10%] top-[15%] h-3 w-3 rounded-full bg-white/40 animate-bounce-soft" />
-          <span className="pointer-events-none absolute right-[15%] bottom-[20%] h-2.5 w-2.5 rounded-full bg-white/30 animate-bounce-soft [animation-delay:1.5s]" />
-
+        <div className="reveal relative overflow-hidden border border-[#e5a3a4] bg-[#f7a4a7] px-7 py-16 text-center shadow-[9px_10px_0_#e7c3ad] sm:px-12 sm:py-20">
+          <div className="pointer-events-none absolute inset-0 dot-divider text-white/20" />
+          <Sparkles className="pointer-events-none absolute left-[10%] top-[18%] h-8 w-8 rotate-12 text-white/70" />
+          <Sparkles className="pointer-events-none absolute bottom-[18%] right-[10%] h-6 w-6 -rotate-12 text-white/70" />
           <div className="relative mx-auto max-w-2xl">
-            <h2 className="font-display text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]">
-              Help us paint a brighter future
-            </h2>
-            <p className="mt-5 text-lg text-white/90">
-              Join a workshop, volunteer your time, or subscribe for updates.
-              There's a place for everyone at Color the Future!
-            </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <a
-                href="#workshops"
-                className="btn inline-flex bg-white text-brand-700 hover:-translate-y-0.5 hover:bg-brand-50"
-              >
-                Join the Fun
-                <ArrowRight className="h-4 w-4" />
-              </a>
-              <a
-                href="#volunteer"
-                className="btn inline-flex bg-white/15 text-white ring-1 ring-white/40 backdrop-blur hover:bg-white/25 hover:-translate-y-0.5"
-              >
-                Become a Volunteer
-              </a>
-            </div>
+            <p className="font-sans text-xs font-extrabold uppercase tracking-[0.18em] text-[#9d4359]">There is room for you here</p>
+            <h2 className="mt-4 text-4xl text-white sm:text-5xl">Help us paint a brighter future.</h2>
+            <p className="mx-auto mt-5 max-w-xl text-lg text-[#fff8f3]">Join a workshop, volunteer your time, or subscribe for updates. There is a place for everyone at Color the Future.</p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3"><a href="#workshops" className="btn bg-[#fffdf8] text-[#c95168] hover:-translate-y-0.5 hover:bg-white">Join the fun <ArrowRight className="h-4 w-4" /></a><a href="#volunteer" className="btn bg-[#c95168] text-white hover:-translate-y-0.5 hover:bg-[#ad435c]">Become a volunteer</a></div>
           </div>
         </div>
       </div>

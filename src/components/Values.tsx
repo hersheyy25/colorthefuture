@@ -1,45 +1,17 @@
 import { useState } from 'react';
-import { Palette, Unlock, Users, Sparkle } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
-import OptionWheel from './OptionWheel';
-import ClayIcon, { type ClayColor } from './ClayIcon';
+import OptionWheel from '@/components/OptionWheel';
 
 type Value = {
-  icon: LucideIcon;
   title: string;
   description: string;
-  color: ClayColor;
+  color: string;
 };
 
 const values: Value[] = [
-  {
-    icon: Palette,
-    title: 'Creativity',
-    description:
-      "Letting kids' imaginations run wild and explore every color, shape, and idea.",
-    color: 'brand',
-  },
-  {
-    icon: Unlock,
-    title: 'Accessibility',
-    description:
-      'Breaking down barriers so every kid can join in, no matter what.',
-    color: 'coral',
-  },
-  {
-    icon: Users,
-    title: 'Community',
-    description:
-      'Bringing people together to make stuff, share laughs, and feel like they belong.',
-    color: 'sky',
-  },
-  {
-    icon: Sparkle,
-    title: 'Impact',
-    description:
-      'Using art to help kids feel confident, kind, and ready to make a difference.',
-    color: 'butter',
-  },
+  { title: 'Creativity', description: "Letting kids' imaginations run wild and explore every color, shape, and idea.", color: '#d8efca' },
+  { title: 'Accessibility', description: 'Breaking down barriers so every kid can join in, no matter what.', color: '#f6cbd1' },
+  { title: 'Community', description: 'Bringing people together to make stuff, share laughs, and feel like they belong.', color: '#c5e3ed' },
+  { title: 'Impact', description: 'Using art to help kids feel confident, kind, and ready to make a difference.', color: '#ffe39b' },
 ];
 
 export default function Values() {
@@ -47,45 +19,32 @@ export default function Values() {
   const current = values[selected];
 
   return (
-    <section id="values" className="bg-white py-20 sm:py-28">
+    <section id="values" className="paper-grid py-24 sm:py-32">
       <div className="container-px">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          {/* Left: heading + active value description */}
+        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
           <div className="reveal">
             <span className="eyebrow">What we stand for</span>
-            <h2 className="mt-5 section-title">
-              Four things we care about a whole lot
-            </h2>
-            <p className="mt-5 text-lg text-ink-600">
-              These are the values that shape every workshop, event, and
-              high-five we give out. Spin the wheel to explore each one.
-            </p>
-
-            <div className="mt-8 clay-soft flex items-start gap-4 rounded-3xl p-6">
-              <ClayIcon icon={current.icon} color={current.color} size="lg" className="shrink-0" />
+            <h2 className="mt-5 section-title">Four things we care about a whole lot.</h2>
+            <p className="mt-6 max-w-xl text-lg text-[#725d55]">These are the values that shape every workshop, event, and high-five. Explore them like pages in a sketchbook.</p>
+            <div className="paper-card mt-9 flex items-start gap-5 p-6 sm:p-8" style={{ borderTop: `8px solid ${current.color}` }}>
+              <span className="mt-1 h-5 w-5 shrink-0 rounded-full" style={{ backgroundColor: current.color }} />
               <div>
-                <h3 className="font-display text-2xl font-semibold text-ink-800">
-                  {current.title}
-                </h3>
-                <p className="mt-1.5 text-base leading-relaxed text-ink-600">
-                  {current.description}
-                </p>
+                <h3 className="text-3xl">{current.title}</h3>
+                <p className="mt-2 text-base text-[#806960]">{current.description}</p>
               </div>
             </div>
-
-            <p className="mt-5 text-sm font-medium text-ink-400">
-              Scroll, drag, or use arrow keys to spin the wheel.
-            </p>
+            <p className="mt-5 font-sans text-xs font-extrabold uppercase tracking-[0.14em] text-[#a37f72]">Scroll, drag, or use arrow keys to explore.</p>
           </div>
 
-          {/* Right: OptionWheel */}
-          <div className="reveal">
-            <div className="relative h-[420px] rounded-[2rem] bg-gradient-to-br from-brand-50 to-brand-100 ring-1 ring-brand-100">
+          <div className="reveal relative">
+            <span className="tape -right-3 top-8 rotate-12" />
+            <div className="paper-card relative h-[420px] overflow-hidden bg-[#fffdf8]">
+              <div className="absolute left-6 top-6 font-display text-2xl text-[#c95168]">Our little compass</div>
               <OptionWheel
-                items={values.map((v) => v.title)}
+                items={values.map((value) => value.title)}
                 defaultSelected={0}
-                textColor="#94a392"
-                activeColor="#426042"
+                textColor="#c6a99e"
+                activeColor="#c95168"
                 side="left"
                 fontSize={2.5}
                 spacing={1.6}
@@ -99,6 +58,7 @@ export default function Values() {
                 draggable
                 onChange={(index) => setSelected(index)}
               />
+              <span className="absolute bottom-6 right-7 rotate-6 font-display text-lg text-[#a37f72]">keep exploring →</span>
             </div>
           </div>
         </div>
