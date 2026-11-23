@@ -17,7 +17,7 @@ export default function Footer() {
     if (error) {
       if (error.code === '23505') { setState('success'); return; }
       setState('error');
-      setErrorMsg('Oops! Something went wrong; please try again in a moment.');
+      setErrorMsg('That did not go through. Please try again.');
       return;
     }
     setState('success');
@@ -46,7 +46,7 @@ export default function Footer() {
           <div><h4 className="font-sans text-xs font-extrabold uppercase tracking-[0.16em] text-white">Programs</h4><ul className="mt-4 space-y-2.5 text-sm text-[#c4aaa0]">{['Painting', 'Drawing', 'Seasonal crafts', 'Public art', 'Volunteer days'].map((program) => <li key={program}><a href="#programs" className="transition hover:text-white">{program}</a></li>)}</ul></div>
           <div className="sm:col-span-2"><h4 className="font-sans text-xs font-extrabold uppercase tracking-[0.16em] text-white">Get in touch</h4><ul className="mt-4 space-y-3 text-sm text-[#c4aaa0]"><li className="flex items-center gap-3"><Mail className="h-4 w-4 text-[#f7a4a7]" /><a href="mailto:colorthefuturefrisco@gmail.com" className="hover:text-white">colorthefuturefrisco@gmail.com</a></li><li className="flex items-center gap-3"><MapPin className="h-4 w-4 text-[#f2cb65]" /><span>Frisco</span></li></ul></div>
         </div>
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-[#765d54] pt-8 text-xs text-[#a88f86] sm:flex-row"><p>© {new Date().getFullYear()} Color the Future. A youth-led community initiative.</p><p>Youth-led. Art-first. Based in Frisco.</p></div>
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-[#765d54] pt-8 text-xs text-[#a88f86] sm:flex-row"><p>© {new Date().getFullYear()} Color the Future. A youth-led community initiative.</p><p>Color the Future is based in Frisco.</p></div>
       </div>
     </footer>
   );

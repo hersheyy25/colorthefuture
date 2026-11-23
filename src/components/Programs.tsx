@@ -13,7 +13,7 @@ type Program = {
 const programs: Program[] = [
   {
     title: 'Painting & Drawing',
-    description: 'Start with a blank page, a brush, and a color you have never tried before. These workshops make room for experimenting.',
+    description: 'Try painting and drawing techniques with a blank page, a brush, and room to experiment.',
     image: 'https://images.pexels.com/photos/7898475/pexels-photo-7898475.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     alt: 'A child painting in an art workshop',
     tag: 'Start here',
@@ -82,9 +82,9 @@ export default function Programs() {
         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
             <span className="eyebrow reveal">Things we make</span>
-            <h2 className="reveal mt-5 section-title">What happens when we put the supplies on the table.</h2>
+            <h2 className="reveal mt-5 section-title">The projects on our table.</h2>
           </div>
-          <p className="reveal max-w-sm text-lg text-[#725d55]">Choose a project, try a new material, and make something alongside other people. No two tables look quite the same.</p>
+          <p className="reveal max-w-sm text-lg text-[#725d55]">Painting, seasonal crafts, murals, and volunteer projects all start with the same thing: a table, some supplies, and a reason to begin.</p>
         </div>
 
         <div className="mt-14 grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
@@ -101,7 +101,7 @@ export default function Programs() {
                 </div>
               </div>
             </div>
-            <p className="hand-note absolute -bottom-6 -right-3 sm:-right-10">Pick a project. See where it goes.</p>
+            <p className="hand-note absolute -bottom-6 -right-3 sm:-right-10">Start with what is in front of you.</p>
           </div>
 
           <div className="reveal">

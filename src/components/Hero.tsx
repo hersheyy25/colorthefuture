@@ -16,7 +16,7 @@ export default function Hero() {
               A youth-led art initiative
             </p>
             <h1 className="mt-6 text-5xl sm:text-6xl lg:text-[5.5rem]">
-              Keeping <span className="text-[#ef5c7a]">imagination</span> alive.
+              Put the paint on the table.
             </h1>
             <p className="mt-7 max-w-lg font-sans text-lg text-[#725d55] sm:text-xl">
               Color the Future brings kids, teens, and families to the table for painting, drawing, seasonal crafts, and public art.
@@ -28,20 +28,20 @@ export default function Hero() {
               </a>
               <a href="#volunteer" className="btn-ghost">Volunteer with us</a>
             </div>
-            <p className="mt-6 font-display text-lg text-[#a16e61]">Free and low-cost ways to make something with your hands.</p>
+            <p className="mt-6 font-display text-lg text-[#a16e61]">Free and low-cost workshops, events, and projects for kids, teens, and families.</p>
           </div>
 
           <div className="relative mx-auto w-full max-w-[550px] animate-fade-in [animation-delay:200ms]">
             <div className="paper-frame relative mx-auto max-w-[390px] rotate-2 p-4 sm:p-5">
               <span className="tape -left-8 top-8 -rotate-12" />
               <img src="/ColorTheFutureLogo.png" alt="Color the Future logo" className="w-full bg-[#dcffd8]" />
-              <p className="mt-4 text-center font-display text-2xl text-[#c95168]">Paint, draw, make a mess.</p>
+              <p className="mt-4 text-center font-display text-2xl text-[#c95168]">Paint, draw, try again.</p>
             </div>
             <div className="photo-frame absolute -bottom-8 -right-2 w-44 -rotate-6 sm:-right-8 sm:w-52">
               <img src="/CTFCover.jpg" alt="Colorful artwork and art supplies" className="aspect-[4/5] w-full object-cover" loading="eager" />
             </div>
             <div className="note-card absolute -bottom-10 left-0 hidden rotate-3 px-5 py-4 sm:block">
-              <p className="font-display text-xl text-[#8c5946]">Bring your ideas.</p>
+              <p className="font-display text-xl text-[#8c5946]">No perfect sketch required.</p>
             </div>
             <span className="paint-swatch absolute -right-4 top-10 h-7 w-7 bg-[#f05b78] sm:-right-8" />
             <span className="paint-swatch absolute bottom-16 left-0 h-5 w-5 bg-[#f2cb65]" />

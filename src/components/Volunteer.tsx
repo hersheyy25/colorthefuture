@@ -25,7 +25,7 @@ export default function Volunteer() {
     const { error } = await supabase.from('volunteers').insert({ name: name.trim(), email: email.trim(), phone: phone.trim() || null, interests: interests.join(', '), message: message.trim() || null });
     if (error) {
       setState('error');
-      setErrorMsg('Oops, something went wrong. Please try again in a moment.');
+      setErrorMsg('That did not go through. Please try again.');
       return;
     }
     setState('success');
@@ -37,8 +37,8 @@ export default function Volunteer() {
         <div className="grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
           <div className="reveal">
             <span className="eyebrow"><HandHeart className="h-4 w-4" strokeWidth={1.8} /> Ways to help</span>
-            <h2 className="mt-5 section-title">There is more than one way to help.</h2>
-            <p className="mt-7 max-w-xl text-lg text-[#725d55]">You can lead a workshop, mentor a young artist, help with event setup, support outreach, or join a public art project. Tell us what sounds like a good fit.</p>
+            <h2 className="mt-5 section-title">Help with a workshop, a mural, or the details in between.</h2>
+            <p className="mt-7 max-w-xl text-lg text-[#725d55]">You can lead a workshop, mentor a young artist, help with event setup, support outreach, or join a public art project. Choose one on the form, or tell us where you would be most useful.</p>
             <div className="photo-frame relative mt-9 rotate-2 max-w-lg">
               <span className="tape -right-7 top-8 rotate-12" />
               <img src="/HappyCTF.jpeg" alt="A Color the Future community moment" className="aspect-[16/10] w-full object-cover" loading="lazy" />
@@ -49,13 +49,13 @@ export default function Volunteer() {
             {state === 'success' ? (
               <div className="flex flex-col items-center py-10 text-center">
                 <CheckCircle2 className="h-12 w-12 text-[#6caa68]" strokeWidth={1.5} />
-                <h3 className="mt-5 text-3xl">Thanks for raising your hand.</h3>
-                <p className="mt-2 max-w-sm text-[#806960]">We have your details and the kinds of projects you are interested in. Our team will follow up with next steps.</p>
+                <h3 className="mt-5 text-3xl">Thanks for offering your time.</h3>
+                <p className="mt-2 max-w-sm text-[#806960]">We have your details and the kinds of projects you like. We will be in touch with what comes next.</p>
               </div>
             ) : (
               <>
-                <div className="flex items-center gap-3"><Heart className="h-6 w-6 text-[#ef7185]" fill="currentColor" strokeWidth={1.5} /><h3 className="text-3xl">Tell us how you would like to help</h3></div>
-                <p className="mt-2 text-sm text-[#806960]">A few details will help us connect you with the right kind of project.</p>
+                <div className="flex items-center gap-3"><Heart className="h-6 w-6 text-[#ef7185]" fill="currentColor" strokeWidth={1.5} /><h3 className="text-3xl">What would you like to help with?</h3></div>
+                <p className="mt-2 text-sm text-[#806960]">A few details will help us find the right project for you.</p>
                 <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <label className="block"><span className="mb-2 block text-sm font-extrabold text-[#6c5149]">Full name</span><input type="text" required value={name} onChange={(event) => setName(event.target.value)} placeholder="Jamie Rivera" className="input" /></label>

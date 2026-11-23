@@ -10,8 +10,8 @@ type Value = {
 const values: Value[] = [
   { title: 'Creativity', description: "Leave space for an unexpected color, a strange shape, or an idea that was not in the plan.", color: '#d8efca' },
   { title: 'Accessibility', description: 'Keep cost and confidence from being the reason someone stays home.', color: '#f6cbd1' },
-  { title: 'Community', description: 'Make beside other people, share the table, and leave knowing you were part of the picture.', color: '#c5e3ed' },
-  { title: 'Impact', description: 'Let a finished piece, a new skill, or a brave first try travel with a kid after the workshop ends.', color: '#ffe39b' },
+  { title: 'Community', description: 'A mural, a craft table, or a room full of people trying something new works better when no one has to do it alone.', color: '#c5e3ed' },
+  { title: 'Impact', description: 'We want a child to leave with more than a finished piece: a technique to try at home, a new idea, or the confidence to start the next one.', color: '#ffe39b' },
 ];
 
 export default function Values() {
@@ -24,7 +24,7 @@ export default function Values() {
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
           <div className="reveal">
             <span className="eyebrow">The way we work</span>
-            <h2 className="mt-5 section-title">Four things that guide the work.</h2>
+            <h2 className="mt-5 section-title">What matters when we plan a project.</h2>
             <p className="mt-6 max-w-xl text-lg text-[#725d55]">They show up in the details: who gets a seat, what materials are available, and how much room there is to try again.</p>
             <div className="paper-card mt-9 flex items-start gap-5 p-6 sm:p-8" style={{ borderTop: `8px solid ${current.color}` }}>
               <span className="mt-1 h-5 w-5 shrink-0 rounded-full" style={{ backgroundColor: current.color }} />

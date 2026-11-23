@@ -22,7 +22,7 @@ export default function Workshops() {
     const { error } = await supabase.from('workshop_signups').insert({ phone: phone.trim() });
     if (error) {
       setState('error');
-      setErrorMsg('Oops, something went wrong. Please try again in a moment.');
+      setErrorMsg('That did not go through. Please try again.');
       return;
     }
     setState('success');
@@ -35,13 +35,13 @@ export default function Workshops() {
           <div className="reveal order-2 lg:order-1">
             <span className="eyebrow"><CalendarHeart className="h-4 w-4" strokeWidth={1.8} /> Workshops</span>
             <h2 className="mt-5 section-title">Want the next workshop date?</h2>
-            <p className="mt-6 max-w-xl text-lg text-[#725d55]">We host free and low-cost workshops throughout the year, with painting, drawing, seasonal crafts, and public art on the table. Leave your number and we will text you when the next one is ready.</p>
+            <p className="mt-6 max-w-xl text-lg text-[#725d55]">We host free and low-cost workshops throughout the year—painting, drawing, seasonal crafts, and public art. Leave your number and we will text you when the next one is announced.</p>
 
             <div className="paper-card mt-9 p-7 sm:p-9">
               {state === 'success' ? (
                 <div className="flex flex-col items-center py-6 text-center">
                   <CheckCircle2 className="h-12 w-12 text-[#6caa68]" strokeWidth={1.5} />
-                  <h3 className="mt-5 text-3xl">You are on the workshop list.</h3>
+                  <h3 className="mt-5 text-3xl">You are on the list.</h3>
                   <p className="mt-2 max-w-sm text-sm text-[#806960]">We will send the details when the next workshop is announced.</p>
                   <button type="button" onClick={() => { setState('idle'); setPhone(''); }} className="btn-ghost mt-5">Add another number</button>
                 </div>
