@@ -1,0 +1,13 @@
+{
+  "projectId": "69480254",
+  "functions": {
+    "admin-bootstrap": {
+      "hasChanged": false,
+      "hash": "9e13af203ba13d8f1011647475bc0440e7b2f0043c0809205710acc5013a0405"
+    },
+    "admin-invite": {
+      "hasChanged": false,
+      "hash": "7544648257ca77decab8dab41c85cd30297791119107dd711b5a58c61bcbcd13"
+    }
+  }
+}

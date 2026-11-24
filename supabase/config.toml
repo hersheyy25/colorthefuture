@@ -1,0 +1,7 @@
+project_id = "color-the-future"
+
+[functions.admin-bootstrap]
+verify_jwt = true
+
+[functions.admin-invite]
+verify_jwt = true
