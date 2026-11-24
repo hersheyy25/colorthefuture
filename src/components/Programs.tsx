@@ -13,7 +13,7 @@ type Program = {
 const programs: Program[] = [
   {
     title: 'Drawing & Sketching',
-    description: 'Trying different drawing techniques that kids may not be fmailiar with!',
+    description: 'Trying different drawing techniques that kids may not be familiar with!',
     image: 'https://images.pexels.com/photos/7898475/pexels-photo-7898475.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     alt: 'A child drawing in an art workshop',
     tag: 'Start here',
@@ -37,9 +37,9 @@ const programs: Program[] = [
   },
   {
     title: 'Volunteer Opportunities',
-    description: 'You can mentor a young artist, help set up an event, or or even lend a hand for public outreach!',
+    description: 'You can mentor a young artist, help set up an event, or or even work for public outreach!',
     image: 'https://images.pexels.com/photos/8042458/pexels-photo-8042458.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    alt: 'A volunteer celebrating with a child',
+    alt: 'A volunteer',
     tag: 'Lend a hand',
     color: '#d8efca',
   },
