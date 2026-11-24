@@ -22,7 +22,7 @@ const programs: Program[] = [
   {
     title: 'Themed Crafts',
     description: 'From wrapping roses for mothers day to popsicle stick heros for father day, themed crafts are a CTF specialty!',
-    image: 'https://images.pexels.com/photos/6157559/pexels-photo-6157559.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    image: '/CTFMothersDay.jpeg',
     alt: 'A rose for mom!',
     tag: 'Make together',
     color: '#ffe39b',
