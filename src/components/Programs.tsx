@@ -12,16 +12,16 @@ type Program = {
 
 const programs: Program[] = [
   {
-    title: 'Painting & Drawing',
-    description: 'Try painting and drawing techniques with a blank page, a brush, and room to experiment.',
+    title: 'Drawing & Sketching',
+    description: 'Try drawing techniques with a blank page, a pencil, and room to experiment.',
     image: 'https://images.pexels.com/photos/7898475/pexels-photo-7898475.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    alt: 'A child painting in an art workshop',
+    alt: 'A child drawing in an art workshop',
     tag: 'Start here',
     color: '#f6cbd1',
   },
   {
     title: 'Seasonal Crafts',
-    description: 'Make leaf prints, decorate pumpkins, and add your part to a collaborative mural as the seasons change.',
+    description: 'Make leaf prints, decorate pumpkins, and build crafts that follow the seasons.',
     image: 'https://images.pexels.com/photos/6157559/pexels-photo-6157559.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
     alt: 'A child creating colorful paper art',
     tag: 'Make together',
@@ -29,9 +29,9 @@ const programs: Program[] = [
   },
   {
     title: 'Public Art Projects',
-    description: 'Work with other young artists on murals and public pieces that begin on a sketchbook page and end somewhere everyone can see.',
+    description: 'Work with other young artists on public pieces that begin on a sketchbook page and end somewhere everyone can see.',
     image: 'https://images.pexels.com/photos/7026051/pexels-photo-7026051.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    alt: 'Children working together on a painting',
+    alt: 'Children working together on an art project',
     tag: 'Out in the world',
     color: '#c5e3ed',
   },
@@ -84,7 +84,7 @@ export default function Programs() {
             <span className="eyebrow reveal">Things we make</span>
             <h2 className="reveal mt-5 section-title">The projects on our table.</h2>
           </div>
-          <p className="reveal max-w-sm text-lg text-[#725d55]">Painting, seasonal crafts, murals, and volunteer projects all start with the same thing: a table, some supplies, and a reason to begin.</p>
+          <p className="reveal max-w-sm text-lg text-[#725d55]">Drawing, seasonal crafts, public art, and volunteer projects all start the same way: a table, some supplies, and a reason to begin.</p>
         </div>
 
         <div className="mt-14 grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">

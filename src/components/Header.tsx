@@ -30,10 +30,7 @@ export default function Header() {
       <div className="container-px flex h-[76px] items-center justify-between">
         <a href="#top" className="flex items-center gap-3" aria-label="Color the Future home">
           <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-[#dcffd8] ring-1 ring-[#ccecc8]">
-            <img src="/ColorTheFutureLogo.png" alt="" className="h-full w-full object-contain" />
-          </span>
-          <span className="hidden font-sans text-sm font-extrabold uppercase tracking-[0.12em] text-[#503f3a] sm:inline">
-            Color the Future
+            <img src="/ColorTheFutureLogo.png" alt="Color the Future home" className="h-full w-full object-contain" />
           </span>
         </a>
 

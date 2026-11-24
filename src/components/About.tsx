@@ -20,16 +20,16 @@ export default function About() {
             <span className="eyebrow reveal">Why this exists</span>
             <h2 className="reveal mt-5 section-title">Kids should get to make things.</h2>
             <p className="reveal mt-7 text-lg text-[#725d55]">
-              Color the Future is a youth-led art initiative. We run hands-on workshops, community events, and collaborative projects for kids and families.
+              Kids spend plenty of time on screens. Color the Future gives them a creative outlet that is not: hands-on workshops, community events, and collaborative projects for kids and families.
             </p>
             <p className="reveal mt-5 text-lg text-[#725d55]">
-              At a workshop, that might mean trying a painting technique, making a seasonal craft, or adding one small piece to a public mural. The finished work matters. So does getting to change your mind halfway through.
+              At a workshop, that might mean trying a new drawing style, making a seasonal craft, or adding one small piece to a group project. The finished work matters. So does getting to change your mind halfway through.
             </p>
 
             <figure className="reveal paper-card relative mt-9 max-w-xl p-6 sm:p-8">
               <Quote className="h-7 w-7 text-[#ef7185]" strokeWidth={1.7} />
               <blockquote className="mt-4 font-display text-2xl leading-snug text-[#674b43]">
-                Paint on the table is fine. A half-finished idea is fine too.
+                A messy table is fine. A half-finished idea is fine too.
               </blockquote>
               <figcaption className="mt-4 font-sans text-xs font-extrabold uppercase tracking-[0.16em] text-[#a37f72]">The messy middle counts too.</figcaption>
             </figure>

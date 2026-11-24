@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { Heart, CheckCircle2, Loader2, AlertCircle, HandHeart } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 
-const interestOptions = ['Leading workshops', 'Mentoring young artists', 'Event setup & support', 'Fundraising & outreach', 'Public art projects'];
-type FormState = 'idle' | 'submitting' | 'success' | 'error';
+const interestOptions = ['Leading workshops', 'Mentoring young artists', 'Event setup & support', 'Fundraising & outreach', 'Public art projects'];type FormState = 'idle' | 'submitting' | 'success' | 'error';
 
 export default function Volunteer() {
   const [name, setName] = useState('');
@@ -37,7 +36,7 @@ export default function Volunteer() {
         <div className="grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
           <div className="reveal">
             <span className="eyebrow"><HandHeart className="h-4 w-4" strokeWidth={1.8} /> Ways to help</span>
-            <h2 className="mt-5 section-title">Help with a workshop, a mural, or the details in between.</h2>
+            <h2 className="mt-5 section-title">Help with a workshop, a project, or the details in between.</h2>
             <p className="mt-7 max-w-xl text-lg text-[#725d55]">You can lead a workshop, mentor a young artist, help with event setup, support outreach, or join a public art project. Choose one on the form, or tell us where you would be most useful.</p>
             <div className="photo-frame relative mt-9 rotate-2 max-w-lg">
               <span className="tape -right-7 top-8 rotate-12" />

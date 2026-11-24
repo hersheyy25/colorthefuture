@@ -30,7 +30,7 @@ export default function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
           <div>
             <a href="#top" className="inline-flex items-center gap-3"><span className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-xl bg-[#dcffd8]"><img src="/ColorTheFutureLogo.png" alt="Color the Future logo" className="h-full w-full object-contain" /></span><span className="font-sans text-sm font-extrabold uppercase tracking-[0.12em] text-white">Color the Future</span></a>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-[#c4aaa0]">A youth-led art initiative in Frisco with free and low-cost workshops, creative events, and ways to volunteer.</p>
+            <p className="mt-6 max-w-md text-base leading-relaxed text-[#c4aaa0]">A youth-led art initiative in Frisco with free workshops, creative events, and ways to volunteer.</p>
             <div className="mt-7 flex items-center gap-4 text-[#f7c1c1]"><Instagram className="h-5 w-5" /><Facebook className="h-5 w-5" /></div>
           </div>
 
@@ -43,7 +43,7 @@ export default function Footer() {
 
         <div className="mt-14 grid gap-8 border-t border-[#765d54] pt-10 sm:grid-cols-2 lg:grid-cols-4">
           <div><h4 className="font-sans text-xs font-extrabold uppercase tracking-[0.16em] text-white">Explore</h4><ul className="mt-4 space-y-2.5 text-sm text-[#c4aaa0]">{[{ label: 'About', href: '#about' }, { label: 'Our values', href: '#values' }, { label: 'Programs', href: '#programs' }, { label: 'Workshops', href: '#workshops' }, { label: 'Meet the team', href: '#team' }, { label: 'Volunteer', href: '#volunteer' }].map((link) => <li key={link.href}><a href={link.href} className="transition hover:text-white">{link.label}</a></li>)}</ul></div>
-          <div><h4 className="font-sans text-xs font-extrabold uppercase tracking-[0.16em] text-white">Programs</h4><ul className="mt-4 space-y-2.5 text-sm text-[#c4aaa0]">{['Painting', 'Drawing', 'Seasonal crafts', 'Public art', 'Volunteer days'].map((program) => <li key={program}><a href="#programs" className="transition hover:text-white">{program}</a></li>)}</ul></div>
+          <div><h4 className="font-sans text-xs font-extrabold uppercase tracking-[0.16em] text-white">Programs</h4><ul className="mt-4 space-y-2.5 text-sm text-[#c4aaa0]">{['Drawing', 'Seasonal crafts', 'Public art', 'Volunteer days'].map((program) => <li key={program}><a href="#programs" className="transition hover:text-white">{program}</a></li>)}</ul></div>
           <div className="sm:col-span-2"><h4 className="font-sans text-xs font-extrabold uppercase tracking-[0.16em] text-white">Get in touch</h4><ul className="mt-4 space-y-3 text-sm text-[#c4aaa0]"><li className="flex items-center gap-3"><Mail className="h-4 w-4 text-[#f7a4a7]" /><a href="mailto:colorthefuturefrisco@gmail.com" className="hover:text-white">colorthefuturefrisco@gmail.com</a></li><li className="flex items-center gap-3"><MapPin className="h-4 w-4 text-[#f2cb65]" /><span>Frisco</span></li></ul></div>
         </div>
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-[#765d54] pt-8 text-xs text-[#a88f86] sm:flex-row"><p>© {new Date().getFullYear()} Color the Future. A youth-led community initiative.</p><p>Color the Future is based in Frisco.</p></div>

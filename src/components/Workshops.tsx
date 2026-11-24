@@ -35,7 +35,7 @@ export default function Workshops() {
           <div className="reveal order-2 lg:order-1">
             <span className="eyebrow"><CalendarHeart className="h-4 w-4" strokeWidth={1.8} /> Workshops</span>
             <h2 className="mt-5 section-title">Want the next workshop date?</h2>
-            <p className="mt-6 max-w-xl text-lg text-[#725d55]">We host free and low-cost workshops throughout the year—painting, drawing, seasonal crafts, and public art. Leave your number and we will text you when the next one is announced.</p>
+            <p className="mt-6 max-w-xl text-lg text-[#725d55]">We host free workshops throughout the year—drawing, seasonal crafts, and public art. Leave your number and we will text you when the next one is announced.</p>
 
             <div className="paper-card mt-9 p-7 sm:p-9">
               {state === 'success' ? (
@@ -72,7 +72,7 @@ export default function Workshops() {
                 </div>
               ))}
               <div className="note-card flex flex-col items-center justify-center p-4 text-center">
-                <p className="font-display text-2xl text-[#8c5946]">Free + low-cost</p>
+                <p className="font-display text-2xl text-[#8c5946]">Always free</p>
                 <p className="mt-1 text-xs font-extrabold uppercase tracking-[0.12em] text-[#a37f72]">Kids, teens, and families</p>
               </div>
             </div>

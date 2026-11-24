@@ -16,10 +16,10 @@ export default function Hero() {
               A youth-led art initiative
             </p>
             <h1 className="mt-6 text-5xl sm:text-6xl lg:text-[5.5rem]">
-              Put the paint on the table.
+              Keeping <span className="text-[#ef5c7a]">imagination</span> alive.
             </h1>
             <p className="mt-7 max-w-lg font-sans text-lg text-[#725d55] sm:text-xl">
-              Color the Future brings kids, teens, and families to the table for painting, drawing, seasonal crafts, and public art.
+              Color the Future brings kids, teens, and families together for drawing, seasonal crafts, and creative projects.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a href="#workshops" className="btn-primary">
@@ -28,14 +28,14 @@ export default function Hero() {
               </a>
               <a href="#volunteer" className="btn-ghost">Volunteer with us</a>
             </div>
-            <p className="mt-6 font-display text-lg text-[#a16e61]">Free and low-cost workshops, events, and projects for kids, teens, and families.</p>
+            <p className="mt-6 font-display text-lg text-[#a16e61]">Free workshops, events, and projects for kids, teens, and families.</p>
           </div>
 
           <div className="relative mx-auto w-full max-w-[550px] animate-fade-in [animation-delay:200ms]">
             <div className="paper-frame relative mx-auto max-w-[390px] rotate-2 p-4 sm:p-5">
               <span className="tape -left-8 top-8 -rotate-12" />
               <img src="/ColorTheFutureLogo.png" alt="Color the Future logo" className="w-full bg-[#dcffd8]" />
-              <p className="mt-4 text-center font-display text-2xl text-[#c95168]">Paint, draw, try again.</p>
+              <p className="mt-4 text-center font-display text-2xl text-[#c95168]">Draw, build, try again.</p>
             </div>
             <div className="photo-frame absolute -bottom-8 -right-2 w-44 -rotate-6 sm:-right-8 sm:w-52">
               <img src="/CTFCover.jpg" alt="Colorful artwork and art supplies" className="aspect-[4/5] w-full object-cover" loading="eager" />
@@ -51,7 +51,6 @@ export default function Hero() {
 
       <div className="mt-28 border-y border-[#ead7c9] bg-[#fffdf8]/70 py-5">
         <div className="container-px flex flex-wrap items-center justify-center gap-x-8 gap-y-2 font-sans text-xs font-extrabold uppercase tracking-[0.16em] text-[#9a796c] sm:justify-between">
-          <span>Painting</span>
           <span>Drawing</span>
           <span>Seasonal crafts</span>
           <span>Public art</span>

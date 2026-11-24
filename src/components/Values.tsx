@@ -8,9 +8,9 @@ type Value = {
 };
 
 const values: Value[] = [
-  { title: 'Creativity', description: "Leave space for an unexpected color, a strange shape, or an idea that was not in the plan.", color: '#d8efca' },
+  { title: 'Creativity', description: "Leave space for a strange shape, a wild idea, or a plan that changes halfway through.", color: '#d8efca' },
   { title: 'Accessibility', description: 'Keep cost and confidence from being the reason someone stays home.', color: '#f6cbd1' },
-  { title: 'Community', description: 'A mural, a craft table, or a room full of people trying something new works better when no one has to do it alone.', color: '#c5e3ed' },
+  { title: 'Community', description: 'A craft table, a group project, or a room full of people trying something new works better when no one has to do it alone.', color: '#c5e3ed' },
   { title: 'Impact', description: 'We want a child to leave with more than a finished piece: a technique to try at home, a new idea, or the confidence to start the next one.', color: '#ffe39b' },
 ];
 
