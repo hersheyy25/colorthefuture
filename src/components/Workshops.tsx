@@ -4,12 +4,6 @@ import { supabase } from '@/lib/supabase';
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error';
 
-const collage = [
-  { src: '/CTFCover.jpg', alt: 'Colorful artwork and art supplies', span: 'sm:col-span-2 sm:row-span-2' },
-  { src: '/HappyCTF.jpeg', alt: 'A Color the Future community moment', span: '' },
-  { src: '/hersheyctfpic.jpg', alt: 'A member of the Color the Future community', span: '' },
-];
-
 export default function Workshops() {
   const [phone, setPhone] = useState('');
   const [state, setState] = useState<FormState>('idle');
@@ -65,15 +59,18 @@ export default function Workshops() {
           </div>
 
           <div className="reveal order-1 lg:order-2">
-            <div className="grid auto-rows-[140px] grid-cols-2 gap-4 sm:auto-rows-[180px]">
-              {collage.map((image, index) => (
-                <div key={image.src} className={`photo-frame ${index === 0 ? '-rotate-2' : index === 1 ? 'rotate-3' : '-rotate-3'} ${image.span}`}>
-                  <img src={image.src} alt={image.alt} className="h-full w-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+            <div className="mx-auto max-w-md">
+              <div className="photo-frame -rotate-2">
+                <img src="/CTFCover.jpg" alt="Colorful artwork and art supplies" className="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+              </div>
+              <div className="mt-6 flex items-center gap-5">
+                <div className="photo-frame w-40 shrink-0 rotate-3 sm:w-48">
+                  <img src="/HappyCTF.jpeg" alt="A Color the Future community moment" className="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
                 </div>
-              ))}
-              <div className="note-card flex flex-col items-center justify-center p-4 text-center">
-                <p className="font-display text-2xl text-[#8c5946]">Always free</p>
-                <p className="mt-1 text-xs font-extrabold uppercase tracking-[0.12em] text-[#a37f72]">Kids, teens, and families</p>
+                <div className="note-card flex flex-col items-center justify-center px-6 py-5 text-center">
+                  <p className="font-display text-2xl text-[#8c5946]">Always free</p>
+                  <p className="mt-1 text-xs font-extrabold uppercase tracking-[0.12em] text-[#a37f72]">Kids, teens, and families</p>
+                </div>
               </div>
             </div>
           </div>
