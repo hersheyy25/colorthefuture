@@ -30,7 +30,7 @@ const programs: Program[] = [
   {
     title: 'Mini Projects',
     description: 'Little doodles and contributions that make us whole!',
-    image: 'https://images.pexels.com/photos/7026051/pexels-photo-7026051.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    image: '/CTF_Anniversary_Post.png',
     alt: 'Children working together on our workshop banner!',
     tag: 'Team efforts',
     color: '#c5e3ed',
