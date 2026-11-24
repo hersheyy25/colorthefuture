@@ -14,7 +14,7 @@ const programs: Program[] = [
   {
     title: 'Drawing & Sketching',
     description: 'Trying different drawing techniques that kids may not be familiar with!',
-    image: 'https://images.pexels.com/photos/7898475/pexels-photo-7898475.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    image: '/CTF_Anniversary_Post_(1).png',
     alt: 'A child drawing in an art workshop',
     tag: 'Start here',
     color: '#f6cbd1',
