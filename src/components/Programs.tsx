@@ -38,7 +38,7 @@ const programs: Program[] = [
   {
     title: 'Volunteer Opportunities',
     description: 'You can mentor a young artist, help set up an event, or or even work for public outreach!',
-    image: 'https://images.pexels.com/photos/8042458/pexels-photo-8042458.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    image: '/CTF_Anniversary_Post_(2).png',
     alt: 'A volunteer',
     tag: 'Lend a hand',
     color: '#d8efca',
