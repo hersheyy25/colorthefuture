@@ -12,7 +12,7 @@ export default function CtaBand() {
             <p className="font-sans text-xs font-extrabold uppercase tracking-[0.18em] text-[#9d4359]">Pick a way to take part</p>
             <h2 className="mt-4 text-4xl text-white sm:text-5xl">Try a workshop, volunteer, or sign up for updates.</h2>
             <p className="mx-auto mt-5 max-w-xl text-lg text-[#fff8f3]">Pick the option that fits.</p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3"><a href="#workshops" className="btn bg-[#fffdf8] text-[#c95168] hover:-translate-y-0.5 hover:bg-white">See the workshops <ArrowRight className="h-4 w-4" /></a><a href="#volunteer" className="btn bg-[#c95168] text-white hover:-translate-y-0.5 hover:bg-[#ad435c]">Volunteer with us</a></div>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3"><a href="#workshops" className="btn bg-[#fffdf8] text-[#c95168] hover:-translate-y-0.5 hover:bg-white">See the workshops <ArrowRight className="h-4 w-4" /></a><a href="#volunteer" className="btn bg-[#c95168] text-white hover:-translate-y-0.5 hover:bg-[#ad435c]">Volunteer with us!</a></div>
           </div>
         </div>
       </div>

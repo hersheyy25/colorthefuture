@@ -29,13 +29,13 @@ export default function Workshops() {
           <div className="reveal order-2 lg:order-1">
             <span className="eyebrow"><CalendarHeart className="h-4 w-4" strokeWidth={1.8} /> Workshops</span>
             <h2 className="mt-5 section-title">Want the next workshop date?</h2>
-            <p className="mt-6 max-w-xl text-lg text-[#725d55]">We host free workshops throughout the year—drawing, seasonal crafts, and public art. Leave your number and we will text you when the next one is announced.</p>
+            <p className="mt-6 max-w-xl text-lg text-[#725d55]">We host many free workshops throughout the year; this includes drawing, seasonal crafts, and mini public art contributions. Leave your number and we will text you when the next one is announced!</p>
 
             <div className="paper-card mt-9 p-7 sm:p-9">
               {state === 'success' ? (
                 <div className="flex flex-col items-center py-6 text-center">
                   <CheckCircle2 className="h-12 w-12 text-[#6caa68]" strokeWidth={1.5} />
-                  <h3 className="mt-5 text-3xl">You are on the list.</h3>
+                  <h3 className="mt-5 text-3xl">You're the list!</h3>
                   <p className="mt-2 max-w-sm text-sm text-[#806960]">We will send the details when the next workshop is announced.</p>
                   <button type="button" onClick={() => { setState('idle'); setPhone(''); }} className="btn-ghost mt-5">Add another number</button>
                 </div>
@@ -52,7 +52,6 @@ export default function Workshops() {
                   <button type="submit" disabled={state === 'submitting'} className="btn-primary w-full disabled:opacity-70">
                     {state === 'submitting' ? <><Loader2 className="h-4 w-4 animate-spin" />Saving…</> : 'Text me the next date'}
                   </button>
-                  <p className="text-center text-xs text-[#a37f72]">Only upcoming workshop texts. Nothing else.</p>
                 </form>
               )}
             </div>
@@ -65,11 +64,11 @@ export default function Workshops() {
               </div>
               <div className="mt-6 flex items-center gap-5">
                 <div className="photo-frame w-40 shrink-0 rotate-3 sm:w-48">
-                  <img src="/HappyCTF.jpeg" alt="A Color the Future community moment" className="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+                  <img src="/HappyCTF.jpeg" className="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
                 </div>
                 <div className="note-card flex flex-col items-center justify-center px-6 py-5 text-center">
-                  <p className="font-display text-2xl text-[#8c5946]">Always free</p>
-                  <p className="mt-1 text-xs font-extrabold uppercase tracking-[0.12em] text-[#a37f72]">Kids, teens, and families</p>
+                  <p className="font-display text-2xl text-[#8c5946]">Cost = Free!!</p>
+                  <p className="mt-1 text-xs font-extrabold uppercase tracking-[0.12em] text-[#a37f72]">Kids of all ages welcome!</p>
                 </div>
               </div>
             </div>

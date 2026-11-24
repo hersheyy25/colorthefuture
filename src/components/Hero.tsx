@@ -19,7 +19,7 @@ export default function Hero() {
               Keeping <span className="text-[#ef5c7a]">imagination</span> alive.
             </h1>
             <p className="mt-7 max-w-lg font-sans text-lg text-[#725d55] sm:text-xl">
-              Color the Future brings kids, teens, and families together for drawing, seasonal crafts, and creative projects.
+              We bring kids, teens, and families together for drawing, seasonal crafts, and mini creative projects.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a href="#workshops" className="btn-primary">
@@ -28,7 +28,7 @@ export default function Hero() {
               </a>
               <a href="#volunteer" className="btn-ghost">Volunteer with us</a>
             </div>
-            <p className="mt-6 font-display text-lg text-[#a16e61]">Free workshops, events, and projects for kids, teens, and families.</p>
+            <p className="mt-6 font-display text-lg text-[#a16e61]">Free workshops, events, and projects for kids!</p>
           </div>
 
           <div className="relative mx-auto w-full max-w-[550px] animate-fade-in [animation-delay:200ms]">

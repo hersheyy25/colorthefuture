@@ -24,8 +24,8 @@ export default function Values() {
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
           <div className="reveal">
             <span className="eyebrow">The way we work</span>
-            <h2 className="mt-5 section-title">What matters when we plan a project.</h2>
-            <p className="mt-6 max-w-xl text-lg text-[#725d55]">They show up in the details: who gets a seat, what materials are available, and how much room there is to try again.</p>
+            <h2 className="mt-5 section-title">What we consider when planning a project:</h2>
+            <p className="mt-6 max-w-xl text-lg text-[#725d55]">These values help keep us track with our goals!</p>
             <div className="paper-card mt-9 flex items-start gap-5 p-6 sm:p-8" style={{ borderTop: `8px solid ${current.color}` }}>
               <span className="mt-1 h-5 w-5 shrink-0 rounded-full" style={{ backgroundColor: current.color }} />
               <div>
@@ -33,13 +33,13 @@ export default function Values() {
                 <p className="mt-2 text-base text-[#806960]">{current.description}</p>
               </div>
             </div>
-            <p className="mt-5 font-sans text-xs font-extrabold uppercase tracking-[0.14em] text-[#a37f72]">Scroll, drag, or use arrow keys to explore.</p>
+            <p className="mt-5 font-sans text-xs font-extrabold uppercase tracking-[0.14em] text-[#a37f72]">Scroll, drag, or use arrow keys to explore!</p>
           </div>
 
           <div className="reveal relative">
             <span className="tape -right-3 top-8 rotate-12" />
             <div className="paper-card relative h-[420px] overflow-hidden bg-[#fffdf8]">
-              <div className="absolute left-6 top-6 font-display text-2xl text-[#c95168]">A few things we keep close</div>
+              <div className="absolute left-6 top-6 font-display text-2xl text-[#c95168]">explore:</div>
               <OptionWheel
                 items={values.map((value) => value.title)}
                 defaultSelected={0}
