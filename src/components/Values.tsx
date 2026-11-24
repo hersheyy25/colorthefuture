@@ -8,10 +8,10 @@ type Value = {
 };
 
 const values: Value[] = [
-  { title: 'Creativity', description: "Leave space for a strange shape, a wild idea, or a plan that changes halfway through.", color: '#d8efca' },
-  { title: 'Accessibility', description: 'Keep cost and confidence from being the reason someone stays home.', color: '#f6cbd1' },
-  { title: 'Community', description: 'A craft table, a group project, or a room full of people trying something new works better when no one has to do it alone.', color: '#c5e3ed' },
-  { title: 'Impact', description: 'We want a child to leave with more than a finished piece: a technique to try at home, a new idea, or the confidence to start the next one.', color: '#ffe39b' },
+  { title: 'Creativity', description: "Allow for unconventional and evolving concepts.", color: '#d8efca' },
+  { title: 'Accessibility', description: 'Ensure that financial and/or self confidence are not the barriers to a child staying at home.', color: '#f6cbd1' },
+  { title: 'Community', description: 'Children benefit from working on new activities within a group environment as they are not isolated.', color: '#c5e3ed' },
+  { title: 'Impact', description: 'Our aim is for children to not only take away a product but also knowledge of an approach which can be used at home, a novel concept and/or the self confidence to begin another project', color: '#ffe39b' },
 ];
 
 export default function Values() {
@@ -58,7 +58,7 @@ export default function Values() {
                 draggable
                 onChange={(index) => setSelected(index)}
               />
-              <span className="absolute bottom-6 right-7 rotate-6 font-display text-lg text-[#a37f72]">look around →</span>
+              <span className="absolute bottom-6 right-7 rotate-6 font-display text-lg text-[#a37f72]">→</span>
             </div>
           </div>
         </div>
